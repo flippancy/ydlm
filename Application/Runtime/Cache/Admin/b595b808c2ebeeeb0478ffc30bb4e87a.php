@@ -1,56 +1,59 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
-<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="format-detection" content="telephone=no, email=no">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="full-screen" content="yes">
-    <meta name="browsermode" content="application">
-    <meta name="screen-orientation" content="portrait">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>
-        
-	NsN
-
-    </title>
-    <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/ydlm/Public/home/css/base.css" rel="stylesheet">
-    
-
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+    <title>移动联盟后台登陆</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/ydlm/Public/admin/css/templatemo_main.css">
 </head>
 
-<body class="cbp-spmenu-push">
-    <header class="navbar navbar-fixed-top navbar-custom" id="navbar">
-        <nav class="dropdown navbar-menu">
-            
-
-        </nav>
-        <div class="navbar-header" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="cursor:pointer">
-            <h5 class="brand">
-	NsN
-</h5>
-            <a class="navbar-brand" href="">
-                <span id="return" class="glyphicon glyphicon-menu-left"></span>
-                
-            </a>
+<body>
+    <div id="main-wrapper">
+        <div class="navbar navbar-inverse" role="navigation">
+            <div class="navbar-header">
+                <div class="logo">
+                    <h1>移动联盟 - 后台登陆</h1>
+                </div>
+            </div>
         </div>
-        <div class="clear"></div>
-        
-    </header>
-    <div class="container" id="container">
-        
-
+        <div class="template-page-wrapper">
+            <form class="form-horizontal templatemo-signin-form" role="form" action="<?php echo U('Index/login');?>" method="POST">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="username" class="col-sm-2 control-label">用户</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Username" name="username">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="password" class="col-sm-2 control-label">密码</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" placeholder="Password" name="password">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="col-sm-offset-2 col-sm-8">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">记住
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="submit" value="登陆" class="btn btn-default" style="float:right">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-    <footer>
-        
-
-    </footer>
 </body>
-<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
-<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-
 
 </html>

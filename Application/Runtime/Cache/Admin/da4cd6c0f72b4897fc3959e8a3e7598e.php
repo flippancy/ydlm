@@ -1,74 +1,59 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
-<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-	<link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/y_b/Public/Admin/css/index.css" rel="stylesheet">
-    <link href="/y_b/Public/Admin/css/dropzone.min.css" rel="stylesheet">
-    <title> y_b blog </title>
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+    <title>移动联盟后台登陆</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/ydlm/Public/admin/css/templatemo_main.css">
 </head>
 
 <body>
-    <form action="" class="dropzone">
-        <div class="fallback">
-            <input name="file" type="file" multiple />
+    <div id="main-wrapper">
+        <div class="navbar navbar-inverse" role="navigation">
+            <div class="navbar-header">
+                <div class="logo">
+                    <h1>移动联盟 - 后台登陆</h1>
+                </div>
+            </div>
         </div>
-    </form>
-    <div class="add">
-        <?php if(is_array($info)): $i = 0; $__LIST__ = $info;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$info): $mod = ($i % 2 );++$i;?><div class="alert alert-info">
-                <div class="row">
-                    <div class="col-sm-2">
-                        <img src="<?php echo ($info["url"]); ?>" class="img-rounded pure-img" style="height:80px;">
-                    </div>
-                    <div class="col-sm-8">
-                        <p> <?php echo ($info["name"]); ?>__<?php echo ($info["type"]); ?>__<?php echo ($info["size"]); ?>__<?php echo ($info["ext"]); ?></p>
-                    </div>
-                    <div class="col-sm-2">
-                        <a href="/y_b/admin.php/Index/delete?name=<?php echo ($info["name"]); ?>" class="btn btn-info">delete</a>
-                        <a href="#" class="btn btn-info" data-dismiss="alert">&times;</a>
+        <div class="template-page-wrapper">
+            <form class="form-horizontal templatemo-signin-form" role="form" action="<?php echo U('Index/login');?>" method="POST">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="username" class="col-sm-2 control-label">用户</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Username" name="username">
+                        </div>
                     </div>
                 </div>
-            </div><?php endforeach; endif; else: echo "" ;endif; ?>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="password" class="col-sm-2 control-label">密码</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" placeholder="Password" name="password">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="col-sm-offset-2 col-sm-8">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">记住
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="submit" value="登陆" class="btn btn-default" style="float:right">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
-<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
-<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/y_b/Public/Admin/js/dropzone.min.js"></script>
-<script type="text/javascript">
-$(".dropzone").dropzone({
-    paramName: "file",
-    url: "<?php echo U('Index/up');?>",
-    // addRemoveLinks: true,
-    // dictRemoveLinks: "x",
-    // dictCancelUpload: "x",
-    maxFiles: 10,
-    maxFilesize: 512,
-    acceptedFiles: ".bmp,.jpg,.gif,.svg,.png,.jpeg",
-    init: function() {
-        this.on("success", function(file, info) {
-            $(".add").append(
-                '<div class="alert alert-info">' +
-
-                '<div class="row">' +
-                '    <div class="col-sm-2">' +
-                '        <img src="'+info.url+'" class="img-rounded pure-img" style="height:80px;">' +
-                '    </div>' +
-                '   <div class="col-sm-8">' +
-                '        <p> '+info.name+'__'+info.type+'__'+info.size+'__'+info.ext+'</p>' +
-                '    </div>' +
-                '    <div class="col-sm-2">' +
-                '        <a href="/y_b/admin.php/Index/delete?name='+info.name+'" class="btn btn-info">delete</a>' +
-                '        <a href="#" class="btn btn-info" data-dismiss="alert">&times;</a>' +
-                '    </div>' +
-                '</div>' +
-                '</div>');
-        });
-        this.on("removedfile", function(file) {
-            console.log("File " + file.name + "removed");
-        });
-    }
-});
-</script>
 
 </html>

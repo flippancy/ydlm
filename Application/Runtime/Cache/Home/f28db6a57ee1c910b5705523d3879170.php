@@ -15,13 +15,10 @@
 	<link href="/ydlm/Public/admin/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 	<link href="/ydlm/Public/admin/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
 	<link href="/ydlm/Public/admin/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-	<!-- <link href="/ydlm/Public/admin/css/style-metro.css" rel="stylesheet" type="text/css"/> -->
 	<link href="/ydlm/Public/admin/css/style.css" rel="stylesheet" type="text/css"/>
 	<link href="/ydlm/Public/admin/css/style-responsive.css" rel="stylesheet" type="text/css"/>
 	<link href="/ydlm/Public/admin/css/default.css" rel="stylesheet" type="text/css" id="style_color"/>
 	<link href="/ydlm/Public/admin/css/uniform.default.css" rel="stylesheet" type="text/css"/>
-	<!-- END GLOBAL MANDATORY STYLES -->
-	<!-- BEGIN PAGE LEVEL STYLES -->
 	<link href="/ydlm/Public/admin/css/timeline.css" rel="stylesheet" type="text/css"/>
     <link href="/ydlm/Public/admin/css/jquery.fancybox.css" rel="stylesheet" />
     <link href="/ydlm/Public/admin/css/jquery.fileupload-ui.css" rel="stylesheet" />

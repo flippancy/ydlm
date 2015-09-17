@@ -3,18 +3,14 @@ namespace Admin\Controller;
 use Think\Controller;
 class IndexController extends CommonController {
     public function index(){
-        $this->redirect('Index/login');
-    }
-
-    public function login(){
         $this->display();
     }
 
-    public function dologin(){
+    public function login(){
         if(IS_POST) {
             $User = M("User");
-            $loginname=$_POST['username'];
-            $password=$_POST['password'];
+            $loginname = I('post.loginname');
+            $password = I('post.password');
             if(!empty($loginname) && !empty($password)){
                 $where['loginname'] = $loginname;
                 $result = $User->where($where)->find();
@@ -25,8 +21,7 @@ class IndexController extends CommonController {
                         $data['lastlogin'] = date('Y-m-d H:i:s');
                         $data['ip'] = get_client_ip();
                         $User->where($result)->data($data)->save();
-                        $this->redirect('File/index');
-                        // $this->success("登陆成功！",U('File/index'));
+                        $this->success("登陆成功！",U('File/index'));
                     }
                     else{
                         $this->error("密码错误，请检查！",'Index/login');

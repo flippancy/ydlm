@@ -13,8 +13,8 @@ class AdminController extends CommonController {
     public function add_admin(){
         if(IS_POST){
             $User = M('User');
-            $loginname = $_POST['loginname'];
-            $password = $_POST['password'];
+            $loginname = I('post.loginname');
+            $password = I('post.password');
             $result = $User->where(array('loginname' => $loginname))->find();
             if($result != null && $result != false){
                 $admin['username']  = $_POST['username'];
@@ -23,7 +23,6 @@ class AdminController extends CommonController {
                 $admin['loginname'] = $loginname;
                 $admin['salt']      = randomkeys(6);  //加盐6位
                 $admin['password']  = md5($admin['salt'].$password);
-
 
                 if(false === ($admin = $User->create($admin))){
                     $this->error("创建Admin对象错误！",'Admin/add');
