@@ -1,0 +1,324 @@
+[ 2015-08-21T14:08:43+08:00 ] ::1 /y_b/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\y_b\Application\Admin\Controller\IndexController.class.php 第 32 行.
+SQL: SHOW COLUMNS FROM `t_photo` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `t_photo`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-08-21T14:08:49+08:00 ] ::1 /y_b/admin.php/Index/up.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\y_b\Application\Admin\Controller\IndexController.class.php 第 41 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: Expires D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+NOTIC: [8] Undefined index: saveName D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 80 行.
+NOTIC: [8] Undefined index: custom_fields D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `t_photo` [ RunTime:0.0040s ]
+SQL: INSERT INTO `t_photo` (`name`,`type`,`size`,`key`,`ext`,`md5`,`sha1`,`savename`,`savepath`,`url`,`created_at`,`created_by`,`remark`) VALUES ('2015-08-21/55d6c0706db85.jpg','image/jpeg','88357','file','jpg','ec4c213ae2b3b1666aeddb256de16241','36d2aa60ad464e6c2badf759d0405a629d6556a1','55d6c0706db85.jpg','2015-08-21/','http://7xl0od.com1.z0.glb.clouddn.com/2015-08-21_55d6c0706db85.jpg','2015-08-21 14:08:48','cjx','暂时什么都没有！') [ RunTime:0.1660s ]
+
+[ 2015-08-21T14:08:49+08:00 ] ::1 /y_b/admin.php/Index/up.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\y_b\Application\Admin\Controller\IndexController.class.php 第 41 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: Expires D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+NOTIC: [8] Undefined index: saveName D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 80 行.
+NOTIC: [8] Undefined index: custom_fields D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `t_photo` [ RunTime:0.0040s ]
+SQL: INSERT INTO `t_photo` (`name`,`type`,`size`,`key`,`ext`,`md5`,`sha1`,`savename`,`savepath`,`url`,`created_at`,`created_by`,`remark`) VALUES ('2015-08-21/55d6c07116922.jpg','image/jpeg','166742','file','jpg','89d40d708e690a7858b67620fed7dd16','9bcb3446e0cf5dadd4b25f76082b4af6b9075fa8','55d6c07116922.jpg','2015-08-21/','http://7xl0od.com1.z0.glb.clouddn.com/2015-08-21_55d6c07116922.jpg','2015-08-21 14:08:49','cjx','暂时什么都没有！') [ RunTime:0.1000s ]
+
+[ 2015-08-21T14:08:50+08:00 ] ::1 /y_b/admin.php/Index/up.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\y_b\Application\Admin\Controller\IndexController.class.php 第 41 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: Expires D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+NOTIC: [8] Undefined index: saveName D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 80 行.
+NOTIC: [8] Undefined index: custom_fields D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `t_photo` [ RunTime:0.0040s ]
+SQL: INSERT INTO `t_photo` (`name`,`type`,`size`,`key`,`ext`,`md5`,`sha1`,`savename`,`savepath`,`url`,`created_at`,`created_by`,`remark`) VALUES ('2015-08-21/55d6c071aeec6.jpg','image/jpeg','50664','file','jpg','c2805424fd543493fb2d0199cb5c37ee','f9c63bec9d429095da63ce9be204b54b7d9f89c6','55d6c071aeec6.jpg','2015-08-21/','http://7xl0od.com1.z0.glb.clouddn.com/2015-08-21_55d6c071aeec6.jpg','2015-08-21 14:08:50','cjx','暂时什么都没有！') [ RunTime:0.2530s ]
+
+[ 2015-08-21T14:08:50+08:00 ] ::1 /y_b/admin.php/Index/up.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\y_b\Application\Admin\Controller\IndexController.class.php 第 41 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: Expires D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+NOTIC: [8] Undefined index: saveName D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 80 行.
+NOTIC: [8] Undefined index: custom_fields D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `t_photo` [ RunTime:0.0220s ]
+SQL: INSERT INTO `t_photo` (`name`,`type`,`size`,`key`,`ext`,`md5`,`sha1`,`savename`,`savepath`,`url`,`created_at`,`created_by`,`remark`) VALUES ('2015-08-21/55d6c07246ed6.jpg','image/jpeg','96063','file','jpg','617b22d1db862887a5eddf11414a5e93','e606485d5d9bf427bd714ed2742df8e501eaae15','55d6c07246ed6.jpg','2015-08-21/','http://7xl0od.com1.z0.glb.clouddn.com/2015-08-21_55d6c07246ed6.jpg','2015-08-21 14:08:50','cjx','暂时什么都没有！') [ RunTime:0.1670s ]
+
+[ 2015-08-21T14:08:51+08:00 ] ::1 /y_b/admin.php/Index/up.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\y_b\Application\Admin\Controller\IndexController.class.php 第 41 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: Expires D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+NOTIC: [8] Undefined index: saveName D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 80 行.
+NOTIC: [8] Undefined index: custom_fields D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `t_photo` [ RunTime:0.0020s ]
+SQL: INSERT INTO `t_photo` (`name`,`type`,`size`,`key`,`ext`,`md5`,`sha1`,`savename`,`savepath`,`url`,`created_at`,`created_by`,`remark`) VALUES ('2015-08-21/55d6c072e0032.jpg','image/jpeg','137929','file','jpg','eee6e0fc268d047bd481d14ef0415141','91f2e6a9ede9fd3e6cfa062268526e0abbbff33c','55d6c072e0032.jpg','2015-08-21/','http://7xl0od.com1.z0.glb.clouddn.com/2015-08-21_55d6c072e0032.jpg','2015-08-21 14:08:51','cjx','暂时什么都没有！') [ RunTime:0.0940s ]
+
+[ 2015-08-21T14:08:51+08:00 ] ::1 /y_b/admin.php/Index/up.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\y_b\Application\Admin\Controller\IndexController.class.php 第 41 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: Expires D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+NOTIC: [8] Undefined index: saveName D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 80 行.
+NOTIC: [8] Undefined index: custom_fields D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `t_photo` [ RunTime:0.0020s ]
+SQL: INSERT INTO `t_photo` (`name`,`type`,`size`,`key`,`ext`,`md5`,`sha1`,`savename`,`savepath`,`url`,`created_at`,`created_by`,`remark`) VALUES ('2015-08-21/55d6c07372a52.jpg','image/jpeg','113157','file','jpg','f0f0b893637f64c3801270bb6b48c2b8','72cf6620e890e29e61cb73cf25db724787459881','55d6c07372a52.jpg','2015-08-21/','http://7xl0od.com1.z0.glb.clouddn.com/2015-08-21_55d6c07372a52.jpg','2015-08-21 14:08:51','cjx','暂时什么都没有！') [ RunTime:0.0450s ]
+
+[ 2015-08-21T14:08:52+08:00 ] ::1 /y_b/admin.php/Index/up.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\y_b\Application\Admin\Controller\IndexController.class.php 第 41 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: Expires D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+NOTIC: [8] Undefined index: saveName D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 80 行.
+NOTIC: [8] Undefined index: custom_fields D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `t_photo` [ RunTime:0.0030s ]
+SQL: INSERT INTO `t_photo` (`name`,`type`,`size`,`key`,`ext`,`md5`,`sha1`,`savename`,`savepath`,`url`,`created_at`,`created_by`,`remark`) VALUES ('2015-08-21/55d6c073e1bc4.jpg','image/jpeg','62189','file','jpg','2760f4d00e679b6992056a9cd49816a1','d9ba5ee5b39c1015da184a389688f45b55d5fc58','55d6c073e1bc4.jpg','2015-08-21/','http://7xl0od.com1.z0.glb.clouddn.com/2015-08-21_55d6c073e1bc4.jpg','2015-08-21 14:08:52','cjx','暂时什么都没有！') [ RunTime:0.0560s ]
+
+[ 2015-08-21T14:08:52+08:00 ] ::1 /y_b/admin.php/Index/up.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\y_b\Application\Admin\Controller\IndexController.class.php 第 41 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: Expires D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+NOTIC: [8] Undefined index: saveName D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 80 行.
+NOTIC: [8] Undefined index: custom_fields D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `t_photo` [ RunTime:0.0020s ]
+SQL: INSERT INTO `t_photo` (`name`,`type`,`size`,`key`,`ext`,`md5`,`sha1`,`savename`,`savepath`,`url`,`created_at`,`created_by`,`remark`) VALUES ('2015-08-21/55d6c07446f49.jpg','image/jpeg','95517','file','jpg','40f452a2068e30c0564e63490df9b60a','89f07d6ecf1e7607e2e02d96ff16d43e1dcf2d65','55d6c07446f49.jpg','2015-08-21/','http://7xl0od.com1.z0.glb.clouddn.com/2015-08-21_55d6c07446f49.jpg','2015-08-21 14:08:52','cjx','暂时什么都没有！') [ RunTime:0.0830s ]
+
+[ 2015-08-21T14:08:53+08:00 ] ::1 /y_b/admin.php/Index/up.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\y_b\Application\Admin\Controller\IndexController.class.php 第 41 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: Expires D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+NOTIC: [8] Undefined index: saveName D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 80 行.
+NOTIC: [8] Undefined index: custom_fields D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `t_photo` [ RunTime:0.0060s ]
+SQL: INSERT INTO `t_photo` (`name`,`type`,`size`,`key`,`ext`,`md5`,`sha1`,`savename`,`savepath`,`url`,`created_at`,`created_by`,`remark`) VALUES ('2015-08-21/55d6c074c916f.jpg','image/jpeg','50034','file','jpg','3b3c0ed9613f6ecc26bd755bd4e39dcb','1aa1ccf4aab90a3c1b3dc86cbb4a9813fe6e4a0a','55d6c074c916f.jpg','2015-08-21/','http://7xl0od.com1.z0.glb.clouddn.com/2015-08-21_55d6c074c916f.jpg','2015-08-21 14:08:53','cjx','暂时什么都没有！') [ RunTime:0.0470s ]
+
+[ 2015-08-21T14:09:01+08:00 ] ::1 /y_b/admin.php/Index/up.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\y_b\Application\Admin\Controller\IndexController.class.php 第 41 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: Expires D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+NOTIC: [8] Undefined index: saveName D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 80 行.
+NOTIC: [8] Undefined index: custom_fields D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `t_photo` [ RunTime:0.0340s ]
+SQL: INSERT INTO `t_photo` (`name`,`type`,`size`,`key`,`ext`,`md5`,`sha1`,`savename`,`savepath`,`url`,`created_at`,`created_by`,`remark`) VALUES ('2015-08-21/55d6c07c474fb.jpg','image/jpeg','227000','file','jpg','23ce6e7bf878a2f5ec348e4099979c3a','ffb09ed015c414dc216e3934a97d9636b330eaf9','55d6c07c474fb.jpg','2015-08-21/','http://7xl0od.com1.z0.glb.clouddn.com/2015-08-21_55d6c07c474fb.jpg','2015-08-21 14:09:00','cjx','暂时什么都没有！') [ RunTime:0.2420s ]
+
+[ 2015-08-21T14:09:13+08:00 ] ::1 /y_b/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\y_b\Application\Admin\Controller\IndexController.class.php 第 32 行.
+SQL: SHOW COLUMNS FROM `t_photo` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `t_photo`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-08-21T14:09:20+08:00 ] ::1 /y_b/admin.php/Index/up.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\y_b\Application\Admin\Controller\IndexController.class.php 第 41 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: Expires D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+NOTIC: [8] Undefined index: saveName D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 80 行.
+NOTIC: [8] Undefined index: custom_fields D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `t_photo` [ RunTime:0.0030s ]
+SQL: INSERT INTO `t_photo` (`name`,`type`,`size`,`key`,`ext`,`md5`,`sha1`,`savename`,`savepath`,`url`,`created_at`,`created_by`,`remark`) VALUES ('2015-08-21/55d6c08f3dcf7.jpg','image/jpeg','264311','file','jpg','83d0fb179f1ff0c1db4a8d4f931235bc','91001183b91479a8074944e108887f261780431a','55d6c08f3dcf7.jpg','2015-08-21/','http://7xl0od.com1.z0.glb.clouddn.com/2015-08-21_55d6c08f3dcf7.jpg','2015-08-21 14:09:19','cjx','暂时什么都没有！') [ RunTime:0.1060s ]
+
+[ 2015-08-21T14:09:21+08:00 ] ::1 /y_b/admin.php/Index/up.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\y_b\Application\Admin\Controller\IndexController.class.php 第 41 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: Expires D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+NOTIC: [8] Undefined index: saveName D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 80 行.
+NOTIC: [8] Undefined index: custom_fields D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `t_photo` [ RunTime:0.0030s ]
+SQL: INSERT INTO `t_photo` (`name`,`type`,`size`,`key`,`ext`,`md5`,`sha1`,`savename`,`savepath`,`url`,`created_at`,`created_by`,`remark`) VALUES ('2015-08-21/55d6c09006e3b.jpg','image/jpeg','288378','file','jpg','ee74e59431c979555a07284aef00a5db','bdc48caf018b652f6eab18edbf34c1281996d033','55d6c09006e3b.jpg','2015-08-21/','http://7xl0od.com1.z0.glb.clouddn.com/2015-08-21_55d6c09006e3b.jpg','2015-08-21 14:09:21','cjx','暂时什么都没有！') [ RunTime:0.0600s ]
+
+[ 2015-08-21T14:09:21+08:00 ] ::1 /y_b/admin.php/Index/up.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\y_b\Application\Admin\Controller\IndexController.class.php 第 41 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: Expires D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+NOTIC: [8] Undefined index: saveName D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 80 行.
+NOTIC: [8] Undefined index: custom_fields D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `t_photo` [ RunTime:0.0020s ]
+SQL: INSERT INTO `t_photo` (`name`,`type`,`size`,`key`,`ext`,`md5`,`sha1`,`savename`,`savepath`,`url`,`created_at`,`created_by`,`remark`) VALUES ('2015-08-21/55d6c09157f68.jpg','image/jpeg','151612','file','jpg','184a7f24d9a3817e3b4ac67be756d853','c8332c829f174fab4e1decbef92dcdefdceb731b','55d6c09157f68.jpg','2015-08-21/','http://7xl0od.com1.z0.glb.clouddn.com/2015-08-21_55d6c09157f68.jpg','2015-08-21 14:09:21','cjx','暂时什么都没有！') [ RunTime:0.0520s ]
+
+[ 2015-08-21T14:09:22+08:00 ] ::1 /y_b/admin.php/Index/up.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\y_b\Application\Admin\Controller\IndexController.class.php 第 41 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: Expires D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+NOTIC: [8] Undefined index: saveName D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 80 行.
+NOTIC: [8] Undefined index: custom_fields D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `t_photo` [ RunTime:0.0030s ]
+SQL: INSERT INTO `t_photo` (`name`,`type`,`size`,`key`,`ext`,`md5`,`sha1`,`savename`,`savepath`,`url`,`created_at`,`created_by`,`remark`) VALUES ('2015-08-21/55d6c091e2a48.jpg','image/jpeg','250619','file','jpg','f36071b64995b67bcd5654350053ae8a','d652405187f2b7ffeb5d118bddb092f05df1e00e','55d6c091e2a48.jpg','2015-08-21/','http://7xl0od.com1.z0.glb.clouddn.com/2015-08-21_55d6c091e2a48.jpg','2015-08-21 14:09:22','cjx','暂时什么都没有！') [ RunTime:0.0650s ]
+
+[ 2015-08-21T14:09:23+08:00 ] ::1 /y_b/admin.php/Index/up.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\y_b\Application\Admin\Controller\IndexController.class.php 第 41 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: Expires D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+NOTIC: [8] Undefined index: saveName D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 80 行.
+NOTIC: [8] Undefined index: custom_fields D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `t_photo` [ RunTime:0.0030s ]
+SQL: INSERT INTO `t_photo` (`name`,`type`,`size`,`key`,`ext`,`md5`,`sha1`,`savename`,`savepath`,`url`,`created_at`,`created_by`,`remark`) VALUES ('2015-08-21/55d6c09285a23.jpg','image/jpeg','51374','file','jpg','1498aea8ec0cc44a9a08e037ad7d6e69','c36b1195f9fc9ed9ec2f0e637195788f8a185935','55d6c09285a23.jpg','2015-08-21/','http://7xl0od.com1.z0.glb.clouddn.com/2015-08-21_55d6c09285a23.jpg','2015-08-21 14:09:22','cjx','暂时什么都没有！') [ RunTime:0.1570s ]
+
+[ 2015-08-21T14:09:23+08:00 ] ::1 /y_b/admin.php/Index/up.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\y_b\Application\Admin\Controller\IndexController.class.php 第 41 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: Expires D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+NOTIC: [8] Undefined index: saveName D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 80 行.
+NOTIC: [8] Undefined index: custom_fields D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `t_photo` [ RunTime:0.0020s ]
+SQL: INSERT INTO `t_photo` (`name`,`type`,`size`,`key`,`ext`,`md5`,`sha1`,`savename`,`savepath`,`url`,`created_at`,`created_by`,`remark`) VALUES ('2015-08-21/55d6c0930920f.jpg','image/jpeg','45256','file','jpg','5714dff3e7a163f5db454f2786058a7e','1f4ac09c37374297f06bb61ed281df94bdaf8e68','55d6c0930920f.jpg','2015-08-21/','http://7xl0od.com1.z0.glb.clouddn.com/2015-08-21_55d6c0930920f.jpg','2015-08-21 14:09:23','cjx','暂时什么都没有！') [ RunTime:0.0780s ]
+
+[ 2015-08-21T14:09:23+08:00 ] ::1 /y_b/admin.php/Index/up.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\y_b\Application\Admin\Controller\IndexController.class.php 第 41 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: Expires D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+NOTIC: [8] Undefined index: saveName D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 80 行.
+NOTIC: [8] Undefined index: custom_fields D:\wamp\www\y_b\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `t_photo` [ RunTime:0.0030s ]
+SQL: INSERT INTO `t_photo` (`name`,`type`,`size`,`key`,`ext`,`md5`,`sha1`,`savename`,`savepath`,`url`,`created_at`,`created_by`,`remark`) VALUES ('2015-08-21/55d6c09370298.jpg','image/jpeg','46781','file','jpg','ac36402c840b3e44db2626cf48efcc42','f315b64995dc62430fe00e65cc9719dc014a6afa','55d6c09370298.jpg','2015-08-21/','http://7xl0od.com1.z0.glb.clouddn.com/2015-08-21_55d6c09370298.jpg','2015-08-21 14:09:23','cjx','暂时什么都没有！') [ RunTime:0.0560s ]
+
+[ 2015-08-21T14:09:29+08:00 ] ::1 /y_b/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\y_b\Application\Admin\Controller\IndexController.class.php 第 32 行.
+SQL: SHOW COLUMNS FROM `t_photo` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `t_photo`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+

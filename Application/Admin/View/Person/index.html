@@ -1,0 +1,217 @@
+<extend name="Public:admin" />
+<block name="css">
+    <link href="__ACSS__/jquery.fancybox.css" rel="stylesheet" />
+    <link href="__ACSS__/jquery.fileupload-ui.css" rel="stylesheet" />
+    <link href="__ACSS__/bootstrap-modal.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="__ACSS__/bootstrap-fileupload.css" />
+    <link rel="stylesheet" type="text/css" href="__ACSS__/jquery-ui-1.10.1.custom.min.css"/>
+</block>
+
+<block name="content">
+    <div class="portlet box blue">
+        <div class="portlet-title">
+            <div class="caption"><i class="icon-cogs"></i>团队成员</div>
+            <div class="tools">
+                <a href="#add" data-toggle="modal"><b>添加成员</b></a>
+                <a href="javascript:;" class="collapse"></a>
+                <!-- <a href="#portlet-config" data-toggle="modal" class="config"></a> -->
+                <!-- <a href="javascript:;" class="reload"></a> -->
+                <!-- <a href="javascript:;" class="remove"></a> -->
+            </div>
+        </div>
+        <div class="portlet-body no-more-tables">
+
+            <table class="table-bordered table-striped table-condensed cf">
+                <thead class="cf">
+                    <tr>
+                        <th class="numeric">头像</th>
+                        <th class="numeric">人物姓名</th>
+                        <th class="numeric">英文名</th>
+                        <th class="numeric">职务</th>
+                        <th class="numeric">学院</th>
+                        <th class="numeric">简介</th>
+                        <th class="numeric">操作</th>
+                    </tr>
+                </thead>
+            
+                <volist name="list" id="vo">
+                <tbody class="file">
+                    <tr class="template-domeload dade in">
+                        <td class="img_path"><img width="30" height="30" src="{$vo.img_path}"/></td>
+                        <td class="name">{$vo.name}</td>
+                        <td class="english_name">{$vo.english_name}</td>
+                        <td class="sex">{$vo.role}</td>
+                        <td class="age">{$vo.college}</td>
+                        <td class="role">{$vo.content}</td>
+                        <td class="delete" align="center"> 
+                            <a class="btn red mini" onclick="location.href='__URL__/update?id={$vo.id}'"><i class="icon-edit"></i></a>
+                            <a class="btn red mini" id="delete" href="#delete{$vo.id}" data-toggle="modal"><i class="icon-trash"></i></a>
+                            <div id="delete{$vo.id}" class="modal hide fade" tabindex="-1" data-backdrop="delete" data-keyboard="false">
+                                <div class="modal-body">
+                                    <p>确定删除该成员信息？</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" data-dismiss="modal" onclick="location.href='__URL__/delete?id={$vo.id}'" class="btn green">确定</button>
+                                    <button type="button" data-dismiss="modal" class="btn">取消</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+
+                </volist>
+            </table>
+        </div>
+    </div>
+
+    <div id="add" class="modal hide fade" tabindex="-1" data-backdrop="add" data-keyboard="false">
+
+        <div class="modal-body">
+    <div class="row-fluid">
+        <div class="span12">
+            <!-- BEGIN PORTLET-->   
+            <div class="portlet box blue">
+                <div class="portlet-title">
+                    <div class="caption"><i class="icon-reorder"></i>添加成员</div>
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse"></a>
+                        <!-- <a href="#portlet-config" data-toggle="modal" class="config"></a> -->
+                        <!-- <a href="javascript:;" class="reload"></a> -->
+                        <!-- <a href="javascript:;" class="remove"></a> -->
+                    </div>
+                </div>
+                <div class="portlet-body form">
+                    <!-- BEGIN FORM-->
+                    <form form action="__URL__/add" enctype="multipart/form-data" method="post" class="form-horizontal">
+
+                        <div class="control-group">
+                            <label class="control-label">Image Upload</label>
+                            <div class="controls">
+                                <div class="fileupload fileupload-new" data-provides="fileupload">
+                                    <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                        <img src="__AIMG__/AAAAAA&amp;text=no+image" alt="" />
+                                    </div>
+                                    <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                    <div>
+                                        <span class="btn btn-file"><span class="fileupload-new">Select image</span>
+                                        <span class="fileupload-exists">Change</span>
+                                        <input type="file" class="default" name="tx"/></span>
+                                        <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+                                    </div>
+                                </div>
+<!--                                 <span class="label label-important">NOTE!</span>
+                                <span>
+                                Attached image thumbnail is
+
+                                supported in Latest Firefox, Chrome, Opera, 
+
+                                Safari and Internet Explorer 10 only
+                                </span> -->
+                            </div>
+
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Name</label>
+                            <div class="controls">
+                                <input type="text" class="span6 m-wrap" name="name" />
+                                <span class="help-inline">姓名</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label">English_Name</label>
+                            <div class="controls">
+                                <input type="text" class="span6 m-wrap" name="english_name" />
+                                <span class="help-inline">英文名</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label">Role</label>
+                            <div class="controls">
+                                <input type="text" class="span6 m-wrap" name="role" />
+                                <span class="help-inline">职务</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label">College</label>
+                            <div class="controls">
+                                <input type="text" class="span6 m-wrap" name="college" />
+                                <span class="help-inline">学院</span>
+                            </div>
+                        </div>
+                        
+                        <div class="control-group">
+                            <label class="control-label">Content</label>
+                            <div class="controls">
+                                <input type="text" class="span6 m-wrap" name="content" />
+                                <span class="help-inline">简介</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <div class="controls">
+                            <button type="submit" class="btn blue start">
+                            <i class="icon-upload icon-white"></i>
+                            <span>添加</span>
+                            </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- END FORM-->  
+
+                </div>
+
+            </div>
+
+            <!-- END PORTLET-->
+
+        </div>
+
+    </div>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" data-dismiss="modal" class="btn">取消</button>
+        </div>
+
+    </div>
+</block>
+<block name="jq">
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+
+    <script type="text/javascript" src="__AJS__/bootstrap-fileupload.js"></script>
+
+    <script src="__AJS__/bootstrap-modal.js" type="text/javascript" ></script>
+
+    <script src="__AJS__/bootstrap-modalmanager.js" type="text/javascript" ></script>
+
+    <!-- END PAGE LEVEL PLUGINS -->
+
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+
+    <script src="__AJS__/app.js"></script>
+
+    <script src="__AJS__/form-components.js"></script>  
+
+    <script src="__AJS__/ui-modals.js"></script>     
+
+    <!-- END PAGE LEVEL SCRIPTS -->
+
+    <script>
+
+        jQuery(document).ready(function() {
+
+        // initiate layout and plugins
+
+            App.init();
+            FormComponents.init();
+            UIModals.init();
+        });
+
+    </script>
+
+    <!-- END JAVASCRIPTS -->
+</block>

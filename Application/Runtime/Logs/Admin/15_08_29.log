@@ -1,0 +1,12 @@
+[ 2015-08-29T18:14:08+08:00 ] ::1 /y_b/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\y_b\Application\Admin\Controller\IndexController.class.php 第 32 行.
+SQL: SHOW COLUMNS FROM `t_photo` [ RunTime:0.0780s ]
+SQL: SELECT * FROM `t_photo`  [ RunTime:0.0000s ]
+ERR: 模板不存在:./Application/Admin/View/Index/index.html
+
