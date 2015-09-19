@@ -39,5 +39,13 @@ abstract class CommonService{
         }
         return $info;
     }
+
+    // 获取分页数据
+    public function get_page($model){
+        $info = $model->count();
+        $Page = new \Think\Page($info,8);
+        $Page->lastSuffix=false;
+        return $Page;
+    }
 }
 

@@ -21,8 +21,6 @@
 				<li><a href="{:U("Index/kyline")}" accesskey="2" title="">开源</a></li>
 				<li><a href="{:U("Index/timeline")}" accesskey="3" title="">新闻</a></li>
 				<li><a href="{:U("Index/salon")}" accesskey="4" title="">沙龙</a></li>
-				<!--<li><a href="#" accesskey="5" title="">会员</a></li>
-				<li><a href="#" accesskey="6" title="">关于</a></li>-->
 			</ul>
 		</div>
 		<div id="logo">
@@ -87,26 +85,37 @@
 	<script src="http://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/Home/ar/js/jquery.gridrotator.js"></script>
 	<script type="text/javascript">	
-		$(function() {
-		
-			$( '#ri-grid' ).gridrotator( {
-				rows		: 2,
-				columns		: 8,
-				animType	: 'fadeInOut',
-				animSpeed	: 1000,
-				interval	: 600,
-				step		: 1,
-				w320		: {
-					rows	: 3,
-					columns	: 4
-				},
-				w240		: {
-					rows	: 3,
-					columns	: 4
-				}
-			} );
-		
-		});
+    $(function() {
+        $('#ri-grid').gridrotator({
+            rows: 2,
+            columns: 4,
+            animType: 'fadeInOut',
+            animSpeed: 2000,
+            interval: 600,
+            step: 1,
+            w1024: {
+                rows: 3,
+                columns: 2
+            },
+            w768: {
+                rows: 3,
+                columns: 2
+            },
+            w480: {
+                rows: 3,
+                columns: 2
+            },
+            w320: {
+                rows: 3,
+                columns: 2
+            },
+            w240: {
+                rows: 3,
+                columns: 2
+            },
+        });
+
+    });
 	</script>
 </body>
 </html>

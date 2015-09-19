@@ -1,7 +1,137 @@
 <extend name="Public:admin" />
 <block name="css">
+    <link href="http://cdn.bootcss.com/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.min.css" rel="stylesheet">
 </block>
+<block name="title">新闻管理</block>
 <block name="content">
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <ul class="nav nav-tabs" role="tablist" id="templatemo-tabs">
+                <li class="active"><a href="#list" role="tab" data-toggle="tab" style="color:#222">新闻列表</a></li>
+                <li><a href="#new" role="tab" data-toggle="tab" style="color:#222">新建新闻</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="list">
+                    <table class="table-bordered table-striped table-condensed" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>新闻标图</th>
+                                <th>新闻日期</th>
+                                <th>新闻标题</th>
+                                <th>点击次数</th>
+                                <th colspan="2">操作</th>
+                            </tr>
+                        </thead>
+                        <volist name="list" id="vo">
+                            <tbody>
+                                <tr>
+                                    <td class="img"><img src="{$vo.img}" style="max-width:80px"></td>
+                                    <td class="date">{$vo.date}</td>
+                                    <td class="title">{$vo.title}</td>
+                                    <td class="view_count">{$vo.view_count}</td>
+                                    <td>
+                                        <p href="#update{$vo.id}" data-toggle="modal" style="font-size:20px;color:#5BC0DE;margin:0;"><i class="fa fa-edit"></i></p>
+                                    </td>
+                                    <td>
+                                        <p class="fa fa-trash" onclick="javascript:if(confirm('确定删除该新闻?'))location='__URL__/delete?id={$vo.id}'" style="font-size:20px;color:#5BC0DE;margin:0;"></p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <!-- 修改模态框 -->
+                            <div id="update{$vo.id}" class="modal fade" tabindex="-1" data-backdrop="update">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title">修改新闻内容</h4>
+                                        </div>
+                                        <form name="save" action="__URL__/update?id={$vo.id}" enctype="multipart/form-data" method="post" class="form-horizontal">
+                                            <div class="modal-body">
+                                                <div class="row-fluid">
+                                                    <div class="control-group">
+                                                        <label class="control-label">新闻标图:</label>
+                                                        <input type="text" class="form-control" name="img" value="{$vo.img}" />
+                                                    </div>
+                                                    <div class="control-group">
+                                                        <label class="control-label">新闻标题:</label>
+                                                        <input type="text" class="form-control" name="title" value="{$vo.title}" />
+                                                    </div>
+                                                    <div class="control-group">
+                                                        <label class="control-label">新闻日期:</label>
+                                                        <input type="text" class="form-control" name="date" id="datepicker2" value="{$vo.date}" />
+                                                    </div>
+                                                    <br>
+                                                    <script id="editor2" name="image-text" type="text/plain">{$vo.image-text}</script>
+                                                    <br>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn" name="save">保存修改</button>
+                                                <button type="button" data-dismiss="modal" class="btn">取消</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </volist>
+                    </table>
+                    {$page}
+                </div>
+                <div class="tab-pane fade" id="new">
+                    <div class="list-group">
+                        <form name="new" action="__URL__/add" enctype="multipart/form-data" method="post" class="form-horizontal">
+                            <div class="control-group">
+                                <label class="control-label">新闻标图:</label>
+                                <input type="text" class="form-control" name="img" />
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">新闻标题:</label>
+                                <input type="text" class="form-control" name="title" />
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">新闻日期:</label>
+                                <input type="text" class="form-control" name="date" id="datepicker" />
+                            </div>
+                            <br>
+                            <script id="editor" name="image-text" type="text/plain">你需要说点什么···············</script>
+                            <br>
+                            <div class="control-group col-sm-offset-8 col-sm-4">
+                                <button name="new" class="btn btn-info pull-right" style="width:100%">新建</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </block>
 <block name="js">
+    <script src="http://cdn.bootcss.com/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap-datepicker/1.4.1/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+    <!-- 配置文件 -->
+    <script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.all.js"></script>
+    <!-- 实例化编辑器 -->
+    <script type="text/javascript">
+    var editor = UE.getEditor('editor', {
+        initialFrameHeight: 450,
+    });
+    var editor = UE.getEditor('editor2', {
+        initialFrameHeight: 200,
+    });
+
+
+    $(document).ready(function() {
+        $('#datepicker').datepicker({
+            format: 'yyyy-mm-dd',
+            language: 'zh-CN'
+        });
+        $('#datepicker2').datepicker({
+            format: 'yyyy-mm-dd',
+            language: 'zh-CN'
+        });
+
+    });
+    </script>
 </block>

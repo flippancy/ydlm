@@ -20,40 +20,75 @@
             </div>
         </div>
         <div class="template-page-wrapper">
-            <form class="form-horizontal templatemo-signin-form" role="form" action="index.html" method="POST" action="<?php echo U('Index/login');?>">
-                <div class="form-group">
-                    <div class="col-md-12">
-                        <label for="username" class="col-sm-2 control-label">用户</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="Username" name="username">
-                        </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <label for="username" class="col-sm-2 control-label">用户</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control username" placeholder="Username" name="username" require>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-md-12">
-                        <label for="password" class="col-sm-2 control-label">密码</label>
-                        <div class="col-sm-10">
-                            <input type="password" class="form-control" placeholder="Password" name="password">
-                        </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <label for="password" class="col-sm-2 control-label">密码</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control password" placeholder="Password" name="password" require>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-md-12">
-                        <div class="col-sm-offset-2 col-sm-8">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox">记住
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-sm-2">
-                            <input type="submit" value="登陆" class="btn btn-default" style="float:right">
-                        </div>
+                <div class="col-md-12">
+                    <div class="col-sm-offset-2 col-sm-10">
+                    <div class="alert alert-info" style="font-size:16px" role="alert"></div>
                     </div>
                 </div>
-            </form>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <div class="col-sm-offset-2 col-sm-8">
+<!--                         <div class="checkbox">
+                            <label>
+                                <input type="checkbox">记住
+                            </label>
+                        </div> -->
+                    </div>
+                    <div class="col-sm-2">
+                        <a type="submit" id="sub" class="btn btn-info" style="width:100%">登陆</a>
+                    </div>
+                </div>
+            </div>
         </div>
+
     </div>
+    <script src="https://cdn.bootcss.com/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $('#sub').click(function() {
+        $.ajax({
+            type: 'POST',
+            url: "<?php echo U('Index/login');?>",
+            data: {
+                username: $('.username').val(),
+                password: $('.password').val(),
+            },
+            cache: false,
+            async: true,
+            success: function(data) {
+                if (data == 0) {
+                    $('.alert').text('登陆成功,即将跳转');
+                    $('.alert').show();
+                    setTimeout("location.href = '<?php echo U('Admin/index');?>'", 1000);
+                } else if (data == 1) {
+                    $('.alert').text('密码错误');
+                    $('.alert').show();
+                } else {
+                    $('.alert').text('不存在此账号');
+                    $('.alert').show();
+                }
+            },
+            error: function() {
+                alert("网络不好");
+            }
+        });
+    });
+    </script>
 </body>
 
 </html>

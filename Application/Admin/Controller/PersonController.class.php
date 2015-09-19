@@ -14,11 +14,6 @@ class PersonController extends CommonController {
         $Person = M('Person');
         if(IS_POST){
             $person = $_POST;
-            // $person['name']    = $_POST['name'];
-            // $person['age']     = $_POST['age'];
-            // $person['sex']     = $_POST['sex'];
-            // $person['college'] = $_POST['college'];
-
             import('ORG.Net.UploadFile');
             $upload =  new UploadFile();// 实例化上传类
             $upload->maxSize = 3145728 ;// 设置附件上传大小

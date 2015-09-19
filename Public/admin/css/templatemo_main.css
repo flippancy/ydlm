@@ -13,8 +13,8 @@
 
 /* 1. CSS Imports
 --------------------------------------- */
-@import url(font-awesome.min.css);
-@import url(bootstrap.min.css);
+/*@import url(font-awesome.min.css);*/
+/*@import url(bootstrap.min.css);*/
 
 /* 2. General Styles
 --------------------------------------- */
@@ -37,7 +37,7 @@ h1 { font-size: 24px; }
 .templatemo-content {
     margin-left: 235px;
     margin-top: 0px;
-    min-height: 600px;
+    min-height: 700px;
     padding: 25px 20px 0 20px;
     background-color: white;
     overflow-x: hidden;

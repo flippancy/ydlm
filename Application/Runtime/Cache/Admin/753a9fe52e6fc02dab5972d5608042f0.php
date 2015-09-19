@@ -7,6 +7,8 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/ydlm/Public/admin/css/templatemo_main.css">
     
 
@@ -16,8 +18,14 @@
     <div class="navbar navbar-inverse" role="navigation">
         <div class="navbar-header">
             <div class="logo">
-                <h1>移动联盟 - 后台</h1>
+                <h1>移动联盟 - 沙龙管理</h1>
             </div>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">下拉框</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
         </div>
     </div>
     <div class="template-page-wrapper">
@@ -29,18 +37,18 @@
                         <span class="btn btn-default">Go</span>
                     </form>
                 </li>
-                <li><a href="#"><i class="fa fa-home"></i>主页</a></li>
+                <li><a href="<?php echo U('Admin/index');?>"><i class="fa fa-home"></i>主页</a></li>
                 <li class="sub">
                     <a href="javascript:;">
                         <i class="fa fa-database"></i> 系统管理
                         <div class="pull-right"><span class="caret"></span></div>
                     </a>
                     <ul class="templatemo-submenu">
-                        <li><a href="#">账户管理</a></li>
+                        <li><a href="<?php echo U('Person/index');?>">账户管理</a></li>
                     </ul>
                 </li>
-                <li><a href="<?php echo U('File/index');?>"><i class="fa fa-cubes"></i><span class="badge pull-right">1</span>D开源软件管理</a></li>
-                <li><a href="<?php echo U('News/index');?>"><i class="fa fa-map-marker"></i><span class="badge pull-right">1</span>新闻管理</a></li>
+                <li><a href="<?php echo U('File/index');?>"><i class="fa fa-cubes"></i><span class="badge pull-right">1</span>开源软件管理</a></li>
+                <li><a href="<?php echo U('News/index');?>"><i class="fa fa-newspaper-o"></i><span class="badge pull-right">1</span>新闻管理</a></li>
                 <li><a href="<?php echo U('Photo/index');?>"><i class="fa fa-users"></i><span class="badge pull-right">1</span>照片管理</a></li>
                 <li><a href="<?php echo U('Salon/index');?>"><i class="fa fa-cog"></i>沙龙管理</a></li>
                 <li><a href="javascript:;" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-sign-out"></i>退出</a></li>
@@ -68,14 +76,14 @@
                 </div>
             </div>
         </div>
-        <footer class="templatemo-footer">
+<!--         <footer class="templatemo-footer">
             <div class="templatemo-copyright">
                 <p>&copy; 移动联盟官方首页 | Design by <a href="" rel="nofollow">flippancy</a>.</p>
             </div>
-        </footer>
+        </footer> -->
     </div>
-    <script src="/ydlm/Public/admin/js/jquery.min.js"></script>
-    <script src="/ydlm/Public/admin/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="/ydlm/Public/admin/js/templatemo_script.js"></script>
     
 </body>

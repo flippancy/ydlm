@@ -1,7 +1,104 @@
 <extend name="Public:admin" />
 <block name="css">
+    <link href="__ACSS__/dropzone.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/lightbox2/2.8.1/css/lightbox.min.css" rel="stylesheet">
 </block>
+<block name="title">照片管理</block>
 <block name="content">
+    <form action="" class="dropzone">
+        <div class="fallback">
+            <input name="file" type="file" multiple/>
+        </div>
+    </form>
+    <div>
+        <div class="add"></div>
+        <volist name="info" id="info">
+            <div class="alert alert-info">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <center>
+                            <a href="{$info.url}" data-lightbox="image-1" data-title="{$info.remark}"><img src="{$info.url}?imageView2/1/w/150/h/150" style="width:100%;max-width:150px;" /></a>
+                        </center>
+                    </div>
+                    <div class="col-sm-10">
+                        <form action="{:U('Photo/update')}" class="form-horizontal" method="post">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="remark" value="{$info.remark}">
+                                <input type="hidden" class="form-control" name="id" value="{$info.id}">
+                                <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit"><span class="fa fa-edit"></button>
+                            </span>
+                            </div>
+                        </form>
+                        <div class="col-sm-4">文件类型：{$info.type}</div>
+                        <div class="col-sm-4">文件大小：{$info.size} B</div>
+                        <div class="col-sm-4">文件后缀：{$info.ext}</div>
+                        <hr style="margin-bottom:0">
+                        <div class="col-sm-12">文件链接：{$info.url}</div>
+                        <hr style="margin-bottom:0">
+                        <div class="col-sm-12">创建时间：{$info.created_at}</div>
+                    </div>
+                    <!--                     <div class="col-sm-1 col-xs-6">
+                        <a href="#" class="btn btn-info" style="width:100%;" data-dismiss="alert"><span class="fa fa-eye"></span></a>
+                    </div> -->
+                    <div class="col-sm-1 col-xs-6">
+                        <a href="__APP__/Photo/delete?name={$info.name}" class="btn btn-info" style="width:100%;"><span class="fa fa-trash"></span></a>
+                    </div>
+                </div>
+            </div>
+        </volist>
+        {$page}
+    </div>
 </block>
 <block name="js">
+    <script type="text/javascript" src="__AJS__/dropzone.min.js"></script>
+    <script src="http://cdn.bootcss.com/lightbox2/2.8.1/js/lightbox.min.js"></script>
+    <script type="text/javascript">
+    $(".dropzone").dropzone({
+        paramName: "file",
+        url: "{:U('Photo/upload')}",
+        maxFiles: 10,
+        maxFilesize: 512,
+        acceptedFiles: ".bmp,.jpg,.gif,.svg,.png,.jpeg",
+        init: function() {
+            this.on("success", function(file, info) {
+                $(".add").append(
+                    '<div class="alert alert-success">' +
+                    '<div class="row">' +
+                    '    <div class="col-sm-1">' +
+                    '       <center>' + 
+                    '        <a href="' + info.url + '" data-lightbox="image-1" data-title="' + info.remark + '"><img src="' + info.url + '?imageView2/1/w/150/h/150" style="width:100%;max-width:150px;"/></a>' +
+                    '       </center>' + 
+                    '    </div>' +
+                    '<div class="col-sm-10">' +
+                    '    <form action="{:U(\'Photo/update\')}" class="form-horizontal" method="post">' +
+                    '        <div class="input-group">' +
+                    '            <input type="text" class="form-control" name="remark" value="' + info.remark + '">' +
+                    '            <input type="hidden" class="form-control" name="id" value="' + info.id + '">' +
+                    '            <span class="input-group-btn">' +
+                    '        <button class="btn btn-default" type="submit"><span class="fa fa-edit"></button>' +
+                    '        </span>' +
+                    '        </div>' +
+                    '    </form>' +
+                    '    <div class="col-sm-4">文件类型：' + info.type + '</div>' +
+                    '    <div class="col-sm-4">文件大小：' + info.size + '  B</div>' +
+                    '    <div class="col-sm-4">文件后缀：' + info.ext + '</div><hr style="margin-bottom:0">' +
+                    '    <div class="col-sm-12">文件链接：' + info.url + '</div><hr style="margin-bottom:0">' +
+                    '    <div class="col-sm-12">创建时间：' + info.created_at + '</div>' +
+                    '</div>' +
+                    '    <div class="col-sm-1 col-xs-6">' +
+                    '        <a href="__APP__/Photo/delete?name=' + info.name + '" class="btn btn-info" style="width:100%;"><span class="fa fa-file-image-o"></span></a>' +
+                    '    </div>' +
+                    // '    <div class="col-sm-1 col-xs-6">' +
+                    // '        <a href="#" class="btn btn-info" data-dismiss="alert" style="width:100%;"><span class="fa fa-file-image-o"></span></a>' +
+                    // '    </div>' +
+                    '</div>' +
+                    '</div>');
+            });
+            this.on("removedfile", function(file) {
+                console.log("File " + file.name + "removed");
+            });
+        }
+    });
+    </script>
 </block>
