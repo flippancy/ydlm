@@ -2,62 +2,58 @@
 <html lang="en" class="no-js">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<!-- <meta name="" content=""> -->
-	<!-- <link rel="shortcut icon" href="../favicon.ico"> -->
-	<link rel="stylesheet" type="text/css" href="__HCSS__/normalize.css" />
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
-	<link rel="stylesheet" type="text/css" href="__HCSS__/demo.css" />
-	<link rel="stylesheet" type="text/css" href="__HCSS__/menu.css" />
-	<block name="css">
-	</block>
-	<!--[if IE]>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="" content=""> -->
+    <!-- <link rel="shortcut icon" href="../favicon.ico"> -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="__HCSS__/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="__HCSS__/demo.css" />
+    <link rel="stylesheet" type="text/css" href="__HCSS__/menu.css" />
+    <block name="css">
+    </block>
+    <!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-	<script src="__HJS__/TweenMax.min.js"></script>
-	<script src="__HJS__/jquery.min.js"></script>
+	<![endif]-->
+    <script src="__HJS__/TweenMax.min.js"></script>
     <style>
-a,a:hover{
-	text-decoration: none;
-}
+    a,
+    a:hover {
+        text-decoration: none;
+    }
     </style>
 </head>
 
 <body>
-	<div class="container">
-
-		<block name="content"></block>
-		<div class="menu">
-			<div class="menu-bg js-blur"></div>
-			<nav class="menu-items">
-				<a href="{:U("Index/index")}" class="menu-item">
-					<span class="js-blur">首页</span>
-				</a>
-				<a href="{:U("Index/kyline")}" class="menu-item">
-					<span class="js-blur">开源</span>
-				</a>
-				<a href="{:U("Index/timeline")}" class="menu-item">
-					<span class="js-blur">新闻</span>
-				</a>
-				<a href="{:U("Index/salon")}" class="menu-item">
-					<span class="js-blur">沙龙</span>
-				</a>
-				<!--<a href="#" class="menu-item">
-					<span class="js-blur">成员</span>
-				</a>
-				<a href="#" class="menu-item">
-					<span class="js-blur">关于</span>
-				</a>-->
-			</nav>
-		</div>
-		<button class="menu-toggle"><span>Open Menu</span></button>
-	</div>
-	<!-- /container -->
-	<block name="jq">
-	</block>
-	<script src="__HJS__/motionblur.js"></script>
-	<script src="__HJS__/menu.js"></script>
+        <block name="content"></block>
+        <div class="menu">
+            <div class="menu-bg js-blur"></div>
+            <nav class="menu-items">
+                <a href="{:U('Index/index')}" class="menu-item">
+                    <span class="js-blur">首页</span>
+                </a>
+                <a href="{:U('Index/kyline')}" class="menu-item">
+                    <span class="js-blur">开源</span>
+                </a>
+                <a href="{:U('Index/timeline')}" class="menu-item">
+                    <span class="js-blur">新闻</span>
+                </a>
+                <a href="{:U('Index/salon')}" class="menu-item">
+                    <span class="js-blur">沙龙</span>
+                </a>
+                <a href="__ROOT__/admin.php" class="menu-item">
+                    <span class="js-blur">登陆</span>
+                </a>
+            </nav>
+        </div>
+        <button class="menu-toggle"><span>Open Menu</span></button>
+    <block name="js">
+    </block>
+    <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="__HJS__/motionblur.js"></script>
+    <script src="__HJS__/menu.js"></script>
 </body>
 
 </html>

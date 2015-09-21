@@ -1,0 +1,222 @@
+/***
+Timeline UI Base
+***/
+body{
+	color: #000;
+}
+.timeline {
+	margin: 0 0 0 0;
+	padding: 1% 1% 0 1%;
+	list-style: none;
+	position: relative;
+}
+
+.timeline > li {
+	position: relative;
+}
+
+/* The date/time */
+.timeline > li .timeline-time {
+	display: block;
+	width: 15%;
+	padding-top: 10px;
+	position: absolute;
+}
+
+.timeline > li .timeline-time span {
+	display: block;
+	text-align: right;
+}
+
+.timeline > li .timeline-time span.date {
+	font-size: 25px;
+	color: #bdd0db;
+	display: block;
+	margin-bottom: 5px;
+	font-weight: 300;
+}
+
+.timeline > li .timeline-time span.time {
+	font-weight: 300;
+	font-size: 36px;
+}
+
+/* Right content */
+
+.timeline > li .timeline-body {
+	margin: 0 0 15px 20%;
+	color: #777;
+	padding: 10px;
+	font-weight: 300;
+	position: relative;
+	border-radius: 5px;
+}
+
+.timeline > li .timeline-body h2 { 
+	margin-top: 0px;
+	padding: 0 0 5px 0;
+	border-bottom: 1px solid rgba(255,255,255,0.3);
+	font-size: 24px;
+}
+
+.timeline > li .timeline-content { 
+	font-size: 14px;
+}
+
+.ie8 .timeline > li .timeline-body h2 { 
+	border-bottom: 1px solid #eee;
+}
+
+.timeline > li .timeline-body img.timeline-img { 
+  width: 75px;
+  height: 75px;
+  margin: 5px 10px 0 0px;
+}
+
+.timeline > li .timeline-body a.nav-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #777;
+  font-size: 14px;
+  padding: 0px;
+  text-align: left;
+  text-decoration: none;
+}
+
+.timeline > li .timeline-body a.nav-link:hover {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+.timeline > li .timeline-body .btn {
+  margin-top: 10px;
+}
+
+/* The triangle */
+.timeline > li .timeline-body:after {
+	right: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-right-color: #3594cb;
+	border-width: 10px;
+	top: 19px;
+}
+
+.timeline > li .timeline-content:after,
+.timeline > li .timeline-content:before {
+	display: table;
+	line-height: 0;
+	content: "";
+}
+
+.timeline > li .timeline-content:after {
+	clear: both;
+}
+
+/*.timeline >li .timeline-footer:after,
+.timeline >li .timeline-footer:before {
+	content: "";
+	display: table;
+	line-height: 0;
+}
+
+.timeline >li .timeline-footer:after {
+	clear: both;
+}*/
+
+/* The icons */
+/*.timeline > li .timeline-icon {
+	width: 33px;
+	height: 33px;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	font-size: 1.4em;
+	line-height: 35px;
+	-webkit-font-smoothing: antialiased;
+	position: absolute;
+	color: #fff;
+	background: #aaa;  
+	border-radius: 50%;
+	box-shadow: 0 0 0 8px #ccc;
+	text-align: center;
+	left: 9%;
+	top: 55px;
+	margin: 5px 0 0 -27px;
+	padding-bottom: 3px; 
+	padding-right: 1px;
+	padding-left: 2px;
+	-webkit-border-radius: 30px !important;
+	   -moz-border-radius: 30px !important;
+			border-radius: 30px !important;
+}*/
+
+/* design */
+.timeline li.timeline-grey .timeline-body:after {
+	border-right-color: #8DCB89;
+}
+
+.timeline li.timeline-grey .timeline-body {
+	 background: #8DCB89;
+}
+
+.timeline li.timeline-grey .timeline-time span.time {
+	 color: #8DCB89; 
+}
+
+@media (max-width: 1100px) {  
+	timeline > li .timeline-time span.time {
+		font-size: 18px;
+	}
+
+	.timeline:before {
+		display: none;
+	}
+
+	.timeline > li .timeline-time {
+		width: 100%;
+		position: relative;
+		padding: 0 0 20px 0;
+	}
+
+	.timeline > li .timeline-time span {
+		text-align: left;
+	}
+
+	.timeline > li .timeline-body {
+		margin: 0 0 30px 0;
+		padding: 1em;
+	}
+
+	.timeline > li .timeline-body:after {
+		right: auto;
+		left: 20px;
+		top: -20px;
+	}
+
+	.timeline > li .timeline-icon {
+		position: relative;
+		float: right;
+		left: auto;
+		margin: -55px 5px 0 0px;
+	}	
+
+	/*colors*/
+	.timeline li.timeline-grey .timeline-body:after {
+		border-right-color: transparent;
+		border-bottom-color: #555555;
+	}
+}
+
+.time-right{
+	margin: 0 0 0 0;
+	padding: 1% 1% 0 1%;
+	font-size: 29px;
+	color:#fff;
+}

@@ -3,6 +3,208 @@
 </block>
 <block name="title">沙龙管理</block>
 <block name="content">
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <ul class="nav nav-tabs" role="tablist" id="templatemo-tabs">
+                <li class="active"><a href="#list" role="tab" data-toggle="tab" style="color:#222">沙龙列表</a></li>
+                <li><a href="#check" role="tab" data-toggle="tab" style="color:#222">未审批沙龙列表</a></li>
+                <li><a href="#new" role="tab" data-toggle="tab" style="color:#222">新建项目</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="list">
+                    <table class="table-bordered table-striped table-condensed" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>名称</th>
+                                <th>说明</th>
+                                <th>文档路径</th>
+                                <th>源代码路径</th>
+                                <th>ppt路径</th>
+                                <th>作者</th>
+                                <th>创建时间</th>
+                                <th colspan="3">操作</th>
+                            </tr>
+                        </thead>
+                        <volist name="list" id="vo">
+                            <tbody>
+                                <tr>
+                                    <td class="name">{$vo.name}</td>
+                                    <td class="instruction">{$vo.instruction}</td>
+                                    <td class="file">{$vo.filename}
+                                        <a href="{$vo.file}" data-toggle="modal" style="font-size:20px;color:#5BC0DE;margin:0;float:right;"><i class="fa fa-download"></i></a>
+                                    </td>
+                                    <td class="mainfile">{$vo.mainfilename}
+                                        <a href="{$vo.mainfile}" data-toggle="modal" style="font-size:20px;color:#5BC0DE;margin:0;float:right;"><i class="fa fa-download"></i></a>
+                                    </td>
+                                    <td class="pptfile">{$vo.pptfilename}
+                                        <a href="{$vo.pptfile}" data-toggle="modal" style="font-size:20px;color:#5BC0DE;margin:0;float:right;"><i class="fa fa-download"></i></a>
+                                    </td>
+                                    <td class="author">{$vo.author}</td>
+                                    <td class="date">{$vo.date}</td>
+                                    <td>
+                                        <p class="fa fa-trash" onclick="javascript:if(confirm('确定删除该沙龙?'))location='__URL__/delete?id={$vo.id}'" style="font-size:20px;color:#5BC0DE;margin:0;"></p>
+                                    </td>
+                                    <td>
+                                        <p href="#update{$vo.id}" data-toggle="modal" style="font-size:20px;color:#5BC0DE;margin:0;"><i class=" fa fa-edit"></i></p>
+                                    </td>
+                                    <td>
+                                        <p onclick="location.href='__URL__/change?id={$vo.id}'" style="font-size:20px;color:#5BC0DE;margin:0;"><i class="fa fa-check-circle-o"></i></p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <!-- 修改模态框 -->
+                            <div id="update{$vo.id}" class="modal fade" tabindex="-1" data-backdrop="update">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title">修改基本内容</h4>
+                                        </div>
+                                        <form form action="__URL__/update?id={$vo.id}" enctype="multipart/form-data" method="post" class="form-horizontal">
+                                            <div class="modal-body">
+                                                <div class="row-fluid">
+                                                    <div class="control-group">
+                                                        <label class="control-label">名称:</label>
+                                                        <input type="text" class="form-control" name="name" value="{$vo.name}" />
+                                                    </div>
+                                                    <div class="control-group">
+                                                        <label class="control-label">作者:</label>
+                                                        <input type="text" class="form-control" name="author" value="{$vo.author}" />
+                                                    </div>
+                                                    <div class="control-group">
+                                                        <label class="control-label">说明:</label>
+                                                        <textarea class="form-control" name="instruction">{$vo.instruction}</textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn">保存修改</button>
+                                                <button type="button" data-dismiss="modal" class="btn">取消</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </volist>
+                    </table>
+                    {$Page}
+                </div>
+                <div class="tab-pane fade" id="check">
+                    <table class="table-bordered table-striped table-condensed" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>名称</th>
+                                <th>说明</th>
+                                <th>文档路径</th>
+                                <th>源代码路径</th>
+                                <th>ppt路径</th>
+                                <th>作者</th>
+                                <th>创建时间</th>
+                                <th colspan="3">操作</th>
+                            </tr>
+                        </thead>
+                        <volist name="list_no" id="vo">
+                            <tbody>
+                                <tr>
+                                    <td class="name">{$vo.name}</td>
+                                    <td class="instruction">{$vo.instruction}</td>
+                                    <td class="file">{$vo.filename}
+                                        <a href="{$vo.file}" data-toggle="modal" style="font-size:20px;color:#5BC0DE;margin:0;float:right;"><i class="fa fa-download"></i></a>
+                                    </td>
+                                    <td class="mainfile">{$vo.mainfilename}
+                                        <a href="{$vo.mainfile}" data-toggle="modal" style="font-size:20px;color:#5BC0DE;margin:0;float:right;"><i class="fa fa-download"></i></a>
+                                    </td>
+                                    <td class="pptfile">{$vo.pptfilename}
+                                        <a href="{$vo.pptfile}" data-toggle="modal" style="font-size:20px;color:#5BC0DE;margin:0;float:right;"><i class="fa fa-download"></i></a>
+                                    </td>
+                                    <td class="author">{$vo.author}</td>
+                                    <td class="date">{$vo.date}</td>
+                                    <td>
+                                        <p class="fa fa-trash" onclick="javascript:if(confirm('确定删除该沙龙?'))location='__URL__/delete?id={$vo.id}'" style="font-size:20px;color:#5BC0DE;margin:0;"></p>
+                                    </td>
+                                    <td>
+                                        <p href="#update{$vo.id}" data-toggle="modal" style="font-size:20px;color:#5BC0DE;margin:0;"><i class=" fa fa-edit"></i></p>
+                                    </td>
+                                    <td>
+                                        <p onclick="location.href='__URL__/change?id={$vo.id}'" style="font-size:20px;color:#5BC0DE;margin:0;"><i class="fa fa-check-circle-o"></i></p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <!-- 修改模态框 -->
+                            <div id="update{$vo.id}" class="modal fade" tabindex="-1" data-backdrop="update">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title">修改基本内容</h4>
+                                        </div>
+                                        <form form action="__URL__/update?id={$vo.id}" enctype="multipart/form-data" method="post" class="form-horizontal">
+                                            <div class="modal-body">
+                                                <div class="row-fluid">
+                                                    <div class="control-group">
+                                                        <label class="control-label">名称:</label>
+                                                        <input type="text" class="form-control" name="name" value="{$vo.name}" />
+                                                    </div>
+                                                    <div class="control-group">
+                                                        <label class="control-label">作者:</label>
+                                                        <input type="text" class="form-control" name="author" value="{$vo.author}" />
+                                                    </div>
+                                                    <div class="control-group">
+                                                        <label class="control-label">说明:</label>
+                                                        <textarea class="form-control" name="instruction">{$vo.instruction}</textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn">保存修改</button>
+                                                <button type="button" data-dismiss="modal" class="btn">取消</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </volist>
+                    </table>
+                    {$Page_no}
+                </div>
+                <div class="tab-pane fade" id="new">
+                    <form form action="__URL__/upload" enctype="multipart/form-data" method="post" class="form-horizontal">
+                        <div class="list-group">
+                            <div class="row">
+                                <div class="control-group col-sm-4">
+                                    <label class="control-label">文件上传</label>
+                                    <input type="file" name="file">
+                                </div>
+                                <div class="control-group col-sm-4">
+                                    <label class="control-label">源码上传</label>
+                                    <input type="file" name="mainfile">
+                                </div>
+                                <div class="control-group col-sm-4">
+                                    <label class="control-label">ppt上传</label>
+                                    <input type="file" name="pptfile">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">名称:</label>
+                                <input type="text" class="form-control" name="name" />
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">作者:</label>
+                                <input type="text" class="form-control" name="author" />
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">说明:</label>
+                                <textarea class="form-control" name="instruction"></textarea>
+                            </div>
+                            <div class="control-group">
+                                <button style="submit" class="btn btn-info pull-right">新建</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </block>
-<block name="jq">
+<block name="js">
 </block>

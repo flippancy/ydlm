@@ -2,8 +2,6 @@
 namespace Home\Controller;
 use Think\Controller;
 class CommonController extends Controller {
-    // public function _initialize() {
-    // }
-    public function init() {
+    public function _initialize() {
     }
 }

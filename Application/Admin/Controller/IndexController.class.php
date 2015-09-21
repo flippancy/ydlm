@@ -3,7 +3,12 @@ namespace Admin\Controller;
 use Think\Controller;
 class IndexController extends Controller {
     public function index(){
-        $this->display('login');
+        header('Content-Type: text/html; charset=utf-8');
+        if(!isset($_SESSION[C("USER_AUTH_KEY")])){
+            $this->redirect('Index/login');
+        }else{
+            $this->redirect('Admin/index');
+        }
     }
 
     public function login(){
@@ -34,6 +39,8 @@ class IndexController extends Controller {
             else{
                 echo json_encode(2);
             }
+        }else{
+            $this->display();
         }
     }
 

@@ -4,7 +4,7 @@
 	left: -400px;
 	bottom: 0;
 	line-height: 100vh;
-	width: 400px;
+	width: 410px;
 	-webkit-filter: url("#blur");
 }
 
@@ -21,7 +21,7 @@
 .menu-items {
 	position: relative;
 	display: inline-block;
-	width: 67%;
+	width: 62%;
 	vertical-align: middle;
 	line-height: 1;
 }

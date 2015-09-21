@@ -24,4 +24,44 @@ class FileService extends CommonService {
       	$info = M("File")->where('approval=0')->order('time desc')->limit($Page->firstRow.','.$Page->listRows)->select();
         return $info;
 	}
+
+    // // 添加文件
+    // public function add_file($data){
+    //     $setting=C('UPLOAD_SITEIMG_QINIU');
+    //     $qiniu = new \Think\Upload\Driver\Qiniu\QiniuStorage($setting['driverConfig']);
+    //     $Upload = new \Think\Upload($setting);
+
+    //     $info = $Upload->upload($_FILES);
+    //     // fileToUpload
+    //     if($info!=null){        
+    //         $time = date('Y-m-d');
+    //         $data['time'] = $time;
+    //         $data['savename'] = $info['fileToUpload']['savename'];
+    //         $data['path'] = $info['fileToUpload']['url'];
+    //         $data['size'] = $info['fileToUpload']['size'];
+
+    //         $result = M('file')->data($data)->add();
+    //     }
+    //     return $result;
+    // }
+
+    // // 删除文件
+    // public function delete($file){
+    //     $file = M('file')->where($file)->find();
+    //     $data = $file['time'].'_'.$file['savename'];
+
+    //     // var_dump($data);
+    //     // die();
+    //     $flag = M('file')->where($file)->delete();
+    //     if ($flag) {
+    //         $file = $data;
+
+    //         $setting=C('UPLOAD_SITEIMG_QINIU');
+    //         $qiniu = new \Think\Upload\Driver\Qiniu\QiniuStorage($setting['driverConfig']);
+    //         $info = $qiniu->del($file);
+
+    //         $info = '文件删除成功！';
+    //     }
+    //     return $info;
+    // }
 }

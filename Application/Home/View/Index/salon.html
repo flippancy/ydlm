@@ -1,244 +1,98 @@
 <extend name="Public:menu" />
 <block name="css">
-    <title>移动联盟 |  沙龙展示</title>
-	<link href="__ACSS__/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-	<link href="__ACSS__/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
-	<link href="__ACSS__/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-    <!--<link href="__ACSS__/style-metro.css" rel="stylesheet" type="text/css"/>-->
-	<link href="__ACSS__/style.css" rel="stylesheet" type="text/css"/>
-	<link href="__ACSS__/style-responsive.css" rel="stylesheet" type="text/css"/>
-	<link href="__ACSS__/default.css" rel="stylesheet" type="text/css" id="style_color"/>
-	<link href="__ACSS__/uniform.default.css" rel="stylesheet" type="text/css"/>
-	<!-- END GLOBAL MANDATORY STYLES -->
-	<!-- BEGIN PAGE LEVEL STYLES -->
-	<link href="__ACSS__/timeline.css" rel="stylesheet" type="text/css"/>
-    <link href="__ACSS__/jquery.fancybox.css" rel="stylesheet" />
-    <link href="__ACSS__/jquery.fileupload-ui.css" rel="stylesheet" />
-    <link href="__ACSS__/bootstrap-modal.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" type="text/css" href="__ACSS__/bootstrap-fileupload.css" />
-    <link rel="stylesheet" type="text/css" href="__ACSS__/jquery-ui-1.10.1.custom.min.css"/>
+    <title>移动联盟 | 沙龙展示</title>
+    <link href="__HCSS__/timeline.css" rel="stylesheet" type="text/css" />
 </block>
-
 <block name="content">
-	<div class="row-fluid">
-
-		<div class="span12">
-
-			<ul class="timeline">
-				<volist name="file" id="file">
-				<li class="timeline-grey">
-
-					<div class="timeline-time">
-						<span class="date">{$file.date}</span>
-						<!-- <span class="time">{$file.time}</span> -->
-					</div>
-
-					<div class="timeline-icon" ><a href="#add" data-toggle="modal"><i class="icon-plus"></i></a></div>
-
-					<div class="timeline-body">
-						<h2>{$file.name} </h2>
-						<div class="timeline-content">
-							<!-- <img class="timeline-img pull-left" src="media/image/3.jpg" alt=""> -->
-							{$file.instruction}<br>
-							<notempty name="file.author"><strong>design by  {$file.author}</strong></notempty>
-						</div></notempty>
-
-						<div class="timeline-footer">
-							<notempty name="file.filename"><a href="__URL__/downloadsl?file={$file.filename}" class="nav-link">下载文档<i class="m-icon-swapright m-icon-white"></i></a></notempty>
-							<notempty name="file.mainfilename"><a href="__URL__/downloadsl?file={$file.mainfilename}" class="nav-link">|  下载源代码<i class="m-icon-swapright m-icon-white"></i></a></notempty>
-							<notempty name="file.pptfilename"><a href="__URL__/downloadsl?file={$file.pptfilename}" class="nav-link">|  下载ppt<i class="m-icon-swapright m-icon-white"></i></a></notempty>
-						</div>
-
-					</div>
-				</li>
-				</volist>
-			</ul>
-
-		</div>
-
-	</div>
-<!-- 上传 -->
-
-    <div id="add" class="modal hide fade" tabindex="-1" data-backdrop="add" data-keyboard="false">
-
-        <div class="modal-body">
-    <div class="row-fluid">
-        <div class="span12">
-            <!-- BEGIN PORTLET-->   
-            <div class="portlet box blue">
-                <div class="portlet-title">
-                    <div class="caption"><i class="icon-reorder"></i>File Upload</div>
-                    <div class="tools">
-                        <a href="javascript:;" class="collapse"></a>
-                        <!-- <a href="#portlet-config" data-toggle="modal" class="config"></a> -->
-                        <!-- <a href="javascript:;" class="reload"></a> -->
-                        <!-- <a href="javascript:;" class="remove"></a> -->
+    <div class="col-sm-8">
+        <ul class="timeline">
+            <volist name="file" id="file">
+                <li class="timeline-grey">
+                    <div class="timeline-time">
+                        <span class="date">{$file.date}</span>
                     </div>
-                </div>
-                <div class="portlet-body form">
-                    <!-- BEGIN FORM-->
-                    <form form action="__URL__/uploadsl" enctype="multipart/form-data" method="post" class="form-horizontal">
-                        <div class="control-group">
-                            <label class="control-label">文档上传</label>
-                            <div class="controls">
-                                <div class="fileupload fileupload-new" data-provides="fileupload">
-                                    <div class="input-append">
-                                        <div class="uneditable-input">
-                                            <i class="icon-file fileupload-exists"></i> 
-                                            <span class="fileupload-preview"></span>
-                                        </div>
-                                        <span class="btn btn-file">
-                                        <span class="fileupload-new">选择文件</span>
-                                        <span class="fileupload-exists">改变</span>
-                                        <input type="file" class="default" name="rar1" multiple/>
-                                        </span>
-                                        <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">移除</a>
-                                    </div>
-                                </div>
+                    <div class="timeline-body">
+                        <h2>
+                            {$file.name}
+                            <notempty name="file.author"><div class="pull-right"><small>by {$file.author}</small></div></notempty>
+                        </h2>
+                        <div class="timeline-content">
+                            {$file.instruction}
+                        </div>
+                        </notempty>
+                        <div class="timeline-footer row">
+                            <div class="col-sm-4 col-xs-4">
+                                <notempty name="file.filename"><a href="__URL__/downloadsl?file={$file.filename}" class="nav-link btn btn-info" style="width:100%;text-align:center">下载文档</a></notempty>
+                            </div>
+                            <div class="col-sm-4 col-xs-4">
+                                <notempty name="file.mainfilename"><a href="__URL__/downloadsl?file={$file.mainfilename}" class="nav-link btn btn-info" style="width:100%;text-align:center">下载源代码</a></notempty>
+                            </div>
+                            <div class="col-sm-4 col-xs-4">
+                                <notempty name="file.pptfilename"><a href="__URL__/downloadsl?file={$file.pptfilename}" class="nav-link btn btn-info" style="width:100%;text-align:center">下载ppt</a></notempty>
                             </div>
                         </div>
-
-                        <div class="control-group">
-                            <label class="control-label">源码上传</label>
-                            <div class="controls">
-                                <div class="fileupload fileupload-new" data-provides="fileupload">
-                                    <div class="input-append">
-                                        <div class="uneditable-input">
-                                            <i class="icon-file fileupload-exists"></i> 
-                                            <span class="fileupload-preview"></span>
-                                        </div>
-                                        <span class="btn btn-file">
-                                        <span class="fileupload-new">选择文件</span>
-                                        <span class="fileupload-exists">改变</span>
-                                        <input type="file" class="default" name="rar2" multiple/>
-                                        </span>
-                                        <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">移除</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="control-group">
-                            <label class="control-label">ppt上传</label>
-                            <div class="controls">
-                                <div class="fileupload fileupload-new" data-provides="fileupload">
-                                    <div class="input-append">
-                                        <div class="uneditable-input">
-                                            <i class="icon-file fileupload-exists"></i> 
-                                            <span class="fileupload-preview"></span>
-                                        </div>
-                                        <span class="btn btn-file">
-                                        <span class="fileupload-new">选择文件</span>
-                                        <span class="fileupload-exists">改变</span>
-                                        <input type="file" class="default" name="rar3" multiple/>
-                                        </span>
-                                        <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">移除</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="control-group">
-                            <label class="control-label">Name</label>
-                            <div class="controls">
-                                <input type="text" class="span6 m-wrap" name="name" />
-                                <span class="help-inline">名称</span>
-                            </div>
-                        </div>
-
-                        <div class="control-group">
-                            <label class="control-label">Instruction</label>
-                            <div class="controls">
-                                <input type="text" class="span6 m-wrap" name="instruction" />
-                                <span class="help-inline">介绍</span>
-                            </div>
-                        </div>
-
-                        <div class="control-group">
-                            <label class="control-label">Author</label>
-                            <div class="controls">
-                                <input type="text" class="span6 m-wrap" name="author" />
-                                <span class="help-inline">作者</span>
-                            </div>
-                        </div>
-
-                        <div class="control-group">
-                            <div class="controls">
-                            <button type="submit" class="btn blue start">
-                            <i class="icon-upload icon-white"></i>
-                            <span>Start upload</span>
-                            </button>
-                            </div>
-                        </div>
-                    </form>
-
-                    <!-- END FORM-->  
-
-                </div>
-
-            </div>
-
-            <!-- END PORTLET-->
-
-        </div>
-
+                    </div>
+                </li>
+            </volist>
+        </ul>
     </div>
+    <div class="col-sm-4">
+        <div class="time-right">
+            <div class="col-sm-6">
+                <a class="btn btn-info" style="width:100%" href="#add" data-toggle="modal">提交</a>
+            </div>
+            <div class="col-sm-6">
+                <a class="btn btn-info" style="width:100%" href="#">评论</a>
+            </div>
         </div>
-
-        <div class="modal-footer">
-            <button type="button" data-dismiss="modal" class="btn">取消</button>
+    </div>
+    <!-- 上传 -->
+    <div id="add" class="modal fade" tabindex="-1" data-backdrop="add" data-keyboard="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">申请沙龙项目</h4>
+                </div>
+                <form form action="__URL__/uploadSalon" enctype="multipart/form-data" method="post" class="form-horizontal">
+                    <div class="modal-body">
+                        <div class="list-group">
+                            <div class="row">
+                                <div class="control-group col-sm-4">
+                                    <label class="control-label">文件上传</label>
+                                    <input type="file" name="file">
+                                </div>
+                                <div class="control-group col-sm-4">
+                                    <label class="control-label">源码上传</label>
+                                    <input type="file" name="mainfile">
+                                </div>
+                                <div class="control-group col-sm-4">
+                                    <label class="control-label">ppt上传</label>
+                                    <input type="file" name="pptfile">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">名称:</label>
+                                <input type="text" class="form-control" name="name" />
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">作者:</label>
+                                <input type="text" class="form-control" name="author" />
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">说明:</label>
+                                <textarea class="form-control" name="instruction"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-info">提交</button>
+                        <button type="button" data-dismiss="modal" class="btn btn-info">取消</button>
+                    </div>
+                </form>
+            </div>
         </div>
-
     </div>
 </block>
-
-
-<block name="jq">
-	<script src="__AJS__/jquery-1.10.1.min.js" type="text/javascript"></script>
-	<script src="__AJS__/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
-	<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-	<script src="__AJS__/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>      
-	<script src="__AJS__/bootstrap.min.js" type="text/javascript"></script>
-	<!--[if lt IE 9]>
-
-	<script src="media/js/excanvas.min.js"></script>
-
-	<script src="media/js/respond.min.js"></script>  
-
-	<![endif]-->   
-
-	<script src="__AJS__/jquery.slimscroll.min.js" type="text/javascript"></script>
-
-	<script src="__AJS__/jquery.blockui.min.js" type="text/javascript"></script>  
-
-	<script src="__AJS__/jquery.cookie.min.js" type="text/javascript"></script>
-
-	<script src="__AJS__/jquery.uniform.min.js" type="text/javascript" ></script>
-
-
-	<script type="text/javascript" src="__AJS__/bootstrap-fileupload.js"></script>
-
-	<script src="__AJS__/bootstrap-modal.js" type="text/javascript" ></script>
-
-	<script src="__AJS__/bootstrap-modalmanager.js" type="text/javascript" ></script>
-	<!-- END CORE PLUGINS -->
-
-	<script src="__AJS__/app.js"></script>      
-
-	<script src="__AJS__/form-components.js"></script>  
-
-	<script src="__AJS__/ui-modals.js"></script>     
-
-	<script>
-		// jQuery(document).ready(function() {       
-
-		   // initiate layout and plugins
-		   // App.init();
-		   // FormComponents.init();
-		   // UIModals.init();
-		// });
-	</script>
-	<!-- END JAVASCRIPTS -->
-<script type="text/javascript">  var _gaq = _gaq || [];  _gaq.push(['_setAccount', 'UA-37564768-1']);  _gaq.push(['_setDomainName', 'keenthemes.com']);  _gaq.push(['_setAllowLinker', true]);  _gaq.push(['_trackPageview']);  (function() {    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);  })();</script>
-
+<block name="js">
 </block>

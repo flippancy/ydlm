@@ -7,6 +7,8 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/ydlm/Public/admin/css/templatemo_main.css">
 </head>
 
@@ -20,45 +22,50 @@
             </div>
         </div>
         <div class="template-page-wrapper">
-            <div class="form-group">
-                <div class="col-md-12">
-                    <label for="username" class="col-sm-2 control-label">用户</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control username" placeholder="Username" name="username" require>
+            <div class="col-sm-offset-3 col-sm-6" style="margin-top:11%;">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="username" class="col-sm-2 control-label">用户</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control username" placeholder="Username" name="username" require>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-12">
-                    <label for="password" class="col-sm-2 control-label">密码</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control password" placeholder="Password" name="password" require>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="password" class="col-sm-2 control-label">密码</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control password" placeholder="Password" name="password" require>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <div class="alert alert-info" style="font-size:16px" role="alert"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-12">
-                    <div class="col-sm-offset-2 col-sm-10">
-                    <div class="alert alert-info" style="font-size:16px" role="alert"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-12">
-                    <div class="col-sm-offset-2 col-sm-8">
-<!--                         <div class="checkbox">
-                            <label>
-                                <input type="checkbox">记住
-                            </label>
-                        </div> -->
-                    </div>
-                    <div class="col-sm-2">
-                        <a type="submit" id="sub" class="btn btn-info" style="width:100%">登陆</a>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="col-sm-offset-2 col-sm-2">
+                            <a class="btn btn-info" style="width:100%" href="/ydlm/index.php">返回</a>
+                        </div>
+                        <div class="col-sm-6">
+    <!--                         <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">记住
+                                </label>
+                            </div> -->
+                        </div>
+                        <div class="col-sm-2">
+                            <a type="submit" id="sub" class="btn btn-info" style="width:100%">登陆</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
-    <script src="https://cdn.bootcss.com/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript">
     $('#sub').click(function() {
         $.ajax({

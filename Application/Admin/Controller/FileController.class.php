@@ -53,6 +53,18 @@ class FileController extends CommonController {
      		}
      	}
    	}
+    // public function upload(){
+    //   $Service = D('File','Service');
+    //   if (IS_POST) {
+    //     $data = I('post.');
+    //     $data = $Service->add_file($data);
+    //     if ($data != 0) {
+    //       $this->success('添加成功');
+    //     }else{
+    //       $this->error('添加失败');
+    //     }
+    //   }
+    // }
 
    	public function delete(){
       $id = I('get.id');
@@ -68,6 +80,14 @@ class FileController extends CommonController {
         $this->error('删除失败-数据');
       }
    	}
+    // public function delete(){
+    //     $Service = D('file','Service');
+    //     if (IS_GET) {
+    //         $data = I('get.');
+    //         $data = $Service->delete($data);
+    //         $this->success($data);
+    //     }
+    // }
 
     public function update(){
     if(IS_POST){
