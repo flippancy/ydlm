@@ -1,0 +1,4 @@
+name: ydlm
+version: 1
+handle:
+ - rewrite: if(!is_dir() && !is_file() && path~"^(.*)$") goto "index.html/$1"

@@ -11,15 +11,11 @@
                     <div class="timeline-time">
                         <span class="date">{$news.date}</span>
                     </div>
-                    <!-- <div class="timeline-icon"><a href="#add" data-toggle="modal"><i class="fa fa-plus"></i></a></div> -->
                     <div class="timeline-body" onclick="location='__URL__/newshow?id={$news.id}'">
                         <h2>{$news.title}</h2>
                         <div class="timeline-content">
                             <notempty name="news.img"><img class="timeline-img pull-left" src="{$news.img}" alt=""></notempty>
                         </div>
-<!--                         <div class="timeline-footer">
-                            <a class="nav-link" href="__URL__/newshow?id={$news.id}">更多<i class="m-icon-swapright m-icon-white"></i></a>
-                        </div> -->
                     </div>
                 </li>
             </volist>
@@ -28,7 +24,7 @@
     <div class="col-sm-4">
         <div class="time-right">
             <div class="col-sm-6">
-                <a class="btn btn-info" style="width:100%" href="#">提交</a>
+                <!-- <a class="btn btn-info" style="width:100%" href="#">提交</a> -->
             </div>
             <div class="col-sm-6">
                 <a class="btn btn-info" style="width:100%" href="#">评论</a>

@@ -20,74 +20,35 @@ class FileController extends CommonController {
       $this->display();
     }
 
-   	public function upload(){
-     	if(IS_POST){
-     		$name = I('post.name');
-     		$author = I('post.author');
-        $instruction = I('post.instruction');
-        $filename = explode('.', I('post.filename'));
-     		$upload = new \Think\Upload();// 实例化上传类
-     		$upload->maxSize = 0;// 设置附件上传大小
-     		$upload->exts = array('rar', 'zip');// 设置附件上传类型
-        $upload->saveName = $filename[0];
-     		$upload->savePath = '/File/'; // 设置附件上传目录
-     		$info = $upload->upload();    // 上传文件
-     		if(!$info) {// 上传错误提示错误信息
-     			var_dump($upload->getError());
-     		}
-     		else{// 上传成功
-     			$file = $info['fileToUpload'];
-  	    	$data['filename'] = $name;
-  	    	$data['savename'] = $file['savename'];
-  	    	$data['size'] = $file['size'];
-          $data['path'] = './Uploads'.$file['savepath'].$file['savename'];
-  	    	$data['time'] = date('Y-m-d H:i:s');
-  	    	$data['author'] = $author;
-  	    	$data['instruction'] = $instruction;
-  	    	$flag = M('File')->add($data);
-      		if($flag!=0){
-      			$this->success('添加成功');
-      		} else if($flag==0){
-      			$this->error('添加失败');
-      		}
-     		}
-     	}
-   	}
-    // public function upload(){
-    //   $Service = D('File','Service');
-    //   if (IS_POST) {
-    //     $data = I('post.');
-    //     $data = $Service->add_file($data);
-    //     if ($data != 0) {
-    //       $this->success('添加成功');
-    //     }else{
-    //       $this->error('添加失败');
-    //     }
-    //   }
-    // }
-
-   	public function delete(){
-      $id = I('get.id');
-      $map['id'] = $id;
-   		$filepath = M('File')->where($map)->field('path')->find();
-      $path = $filepath['path'];
-   		if(M('File')->where($map)->delete()){
-   			if(unlink($path)){
-          $this->success('删除成功');
-        }
-        else $this->error('删除失败-文件');
-      } else{
-        $this->error('删除失败-数据');
+    public function upload(){
+      $Service = D('File','Service');
+      if (IS_POST) {
+        $data = I('post.');
+        $data = $Service->add_file($data);
+        $this->ajaxReturn($data);
       }
-   	}
-    // public function delete(){
-    //     $Service = D('file','Service');
-    //     if (IS_GET) {
-    //         $data = I('get.');
-    //         $data = $Service->delete($data);
-    //         $this->success($data);
-    //     }
-    // }
+    }
+    public function add(){
+      $Service = D('File','Service');
+      if (IS_POST) {
+        $data = I('post.');
+        $flag = $Service->add($data);
+        if($flag!=0){
+          $this->success('添加成功');
+        }else if($flag==0){
+          $this->error('添加失败');
+        }
+      }
+    }
+
+    public function delete(){
+        $Service = D('file','Service');
+        if (IS_GET) {
+            $data = I('get.');
+            $data = $Service->delete($data);
+            $this->success($data);
+        }
+    }
 
     public function update(){
     if(IS_POST){

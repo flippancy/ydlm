@@ -53,6 +53,7 @@
                         <li><a href="<?php echo U('Person/index');?>">账户管理</a></li>
                     </ul>
                 </li>
+                <li><a href="/ydlm/index.php"><i class="fa fa-backward"></i>返回前台</a></li>
                 <li><a href="javascript:;" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-sign-out"></i>退出</a></li>
             </ul>
         </div>

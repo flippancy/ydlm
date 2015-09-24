@@ -42,7 +42,7 @@
                         </div>
                         <div class="timeline-footer row">
                             <div class="col-sm-6 col-xs-6">
-                                <a href="<?php echo ($file["path"]); ?>" class="nav-link btn btn-info" style="width:100%;text-align:center">下载</a>
+                                <a href="<?php echo ($file["url"]); ?>" class="nav-link btn btn-info" style="width:100%;text-align:center">下载</a>
                             </div>
                             <div class="col-sm-6 col-xs-6">
                                 <?php if(!empty($file["yulan"])): ?><a href="<?php echo ($file["yulan"]); ?>" class="nav-link btn btn-info" style="width:100%;text-align:center">
@@ -75,34 +75,44 @@
                     <div class="list-group">
                         <div class="control-group">
                             <label class="control-label">文件上传</label>
-                            <div class="row">
-                                <input type="file" id="fileToUpload" onchange="fileSelected();" class="col-sm-3">
-                                <div id="fileName" class="col-sm-3"></div>
-                                <div id="fileSize" class="col-sm-3"></div>
-                                <div id="fileType" class="col-sm-3"></div>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-info" id="progressNumber" aria-valuemin="0" aria-valuemax="100" style="width:0%">
-                                </div>
+                            <div class="row file">
+                                <input id="fileupload" type="file" name="files[]" data-url="<?php echo U('Index/upload');?>" onchange="fileSelected();" class="col-sm-4" multiple>
+                                <div id="fileName" class="col-sm-4"></div>
+                                <div id="fileSize" class="col-sm-4"></div>
                             </div>
                         </div>
-                        <div class="control-group">
-                            <label class="control-label">项目名称</label>
-                            <input type="text" class="form-control" id="name" />
+                        <div class="progress" id="progress">
+                            <div class="bar progress-bar progress-bar-info" style="width: 0%;"></div>
                         </div>
-                        <div class="control-group">
-                            <label class="control-label">项目参与者</label>
-                            <input type="text" class="form-control" id="author" />
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label">开源介绍</label>
-                            <input type="text" class="form-control" id="instruction" />
+                        <form action="/ydlm/index.php/Index/add" enctype="multipart/form-data" method="post" class="form-horizontal">
+                            <input type="hidden" class="form-control" id="savename" name="savename" />
+                            <input type="hidden" class="form-control" id="size" name="size" required/>
+                            <input type="hidden" class="form-control" id="path" name="path" required/>
+                            <input type="hidden" class="form-control" id="url" name="url" required/>
+                            <div class="control-group">
+                                <label class="control-label">项目名称</label>
+                                <input type="text" class="form-control" id="filename" name="filename" required/>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">项目参与者</label>
+                                <input type="text" class="form-control" id="author" name="author" required/>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">开源介绍</label>
+                                <input type="text" class="form-control" id="instruction" name="instruction" required/>
+                            </div>
+                            <br>
+                            <div class="control-group col-sm-4">
+                                <button class="btn btn-info pull-right" style="width:100%">新建</button>
+                            </div>
+                        </form>
+                        <div class="control-group col-sm-offset-4 col-sm-4 upload-file">
+                            <button class="btn pull-right upload-file-btn" style="width:100%">没有选择文件</button>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-info" onclick="uploadFile()">提交</button>
-                    <button type="button" data-dismiss="modal" class="btn btn-info">取消</button>
+                    <!-- <button type="button" data-dismiss="modal" class="btn btn-info">取消</button> -->
                 </div>
                 </form>
             </div>
@@ -130,10 +140,44 @@
             </nav>
         </div>
         <button class="menu-toggle"><span>Open Menu</span></button>
+    <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     
-    <script type="text/javascript">
+    <script src="/ydlm/Public/admin/js/jquery.ui.widget.js"></script>
+    <script src="/ydlm/Public/admin/js/jquery.iframe-transport.js"></script>
+    <script src="/ydlm/Public/admin/js/jquery.fileupload.js"></script>
+    <script>
+    $(function() {
+        $('#fileupload').fileupload({
+            dataType: 'json',
+            add: function(e, data) {
+                $('.upload-file-btn').text('上传');
+                $('.upload-file-btn').click(function() {
+                    $('.upload-file-btn').text('上传中...');
+                    data.submit();
+                });
+            },
+            done: function(e, data) {
+                var info = data.jqXHR.responseJSON;
+                $('#savename').val(info[0].savename);
+                $('#size').val(info[0].size);
+                $('#path').val(info[0].name);
+                $('#url').val(info[0].url);
+                $('.upload-file-btn').text('上传完成');
+                alert("上传完成");
+            },
+            progressall: function(e, data) {
+                var progress = parseInt(data.loaded / data.total * 100, 10);
+                $('#progress .bar').css(
+                    'width',
+                    progress + '%'
+                );
+            }
+        });
+    });
+
     function fileSelected() {
-        var file = document.getElementById('fileToUpload').files[0];
+        var file = document.getElementById('fileupload').files[0];
         if (file) {
             var fileSize = 0;
             if (file.size > 1024 * 1024)
@@ -142,51 +186,10 @@
                 fileSize = (Math.round(file.size * 100 / 1024) / 100).toString() + 'KB';
             document.getElementById('fileName').innerHTML = '文件名' + file.name;
             document.getElementById('fileSize').innerHTML = '文件大小:' + fileSize;
-            document.getElementById('fileType').innerHTML = '文件类型:' + file.type;
         }
-    }
-
-    function uploadFile() {
-        var fd = new FormData();
-        fd.append("fileToUpload", document.getElementById('fileToUpload').files[0]);
-        fd.append("name", document.getElementById("name").value);
-        fd.append("filename", document.getElementById('fileToUpload').files[0].name);
-        fd.append("author", document.getElementById('author').value);
-        fd.append("instruction", document.getElementById('instruction').value);
-        var xhr = new XMLHttpRequest();
-        xhr.upload.addEventListener("progress", uploadProgress, false);
-        xhr.addEventListener("load", uploadComplete, false);
-        xhr.addEventListener("error", uploadFailed, false);
-        xhr.addEventListener("abort", uploadCanceled, false);
-        xhr.open("POST", "/ydlm/index.php/Index/upload"); //修改成自己的接口
-        xhr.send(fd);
-    }
-
-    function uploadProgress(evt) {
-        if (evt.lengthComputable) {
-            var percentComplete = Math.round(evt.loaded * 100 / evt.total);
-            document.getElementById('progressNumber').style.width = percentComplete.toString() + '%';
-        } else {
-            document.getElementById('progressNumber').innerHTML = 'unable to compute';
-        }
-    }
-
-    function uploadComplete(evt) {
-        // 服务器端返回响应时候触发event事件
-        alert("添加成功,请等待审批");
-    }
-
-    function uploadFailed(evt) {
-        alert("There was an error attempting to upload the file.");
-    }
-
-    function uploadCanceled(evt) {
-        alert("The upload has been canceled by the user or the browser dropped the connection.");
     }
     </script>
 
-    <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="/ydlm/Public/home/js/motionblur.js"></script>
     <script src="/ydlm/Public/home/js/menu.js"></script>
 </body>

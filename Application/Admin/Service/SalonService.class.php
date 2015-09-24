@@ -8,7 +8,7 @@ class SalonService extends CommonService {
         $Upload = new \Think\Upload($setting);
 
         $info = $Upload->upload($_FILES);
-
+        // var_dump($info);die();
         $time = date('Y-m-d');
         $data['date'] = $time;
         $data['file'] = $info['file']['url'];
@@ -19,7 +19,7 @@ class SalonService extends CommonService {
         $data['pptfilename'] = $info['pptfile']['savename'];
 
         $result = M('salon')->data($data)->add();
-        return $result;
+        return $info;
     }
 
     // 删除文件
@@ -47,5 +47,12 @@ class SalonService extends CommonService {
             $info = '文件删除成功！';
         }
         return $info;
+    }
+
+    public function get_accessToken(){
+        $setting=C('UPLOAD_SITEIMG_QINIU');
+        $qiniu = new \Think\Upload\Driver\Qiniu\QiniuStorage($setting['driverConfig']);
+        $accessToken = $qiniu->UploadToken();
+        return $accessToken;
     }
 }

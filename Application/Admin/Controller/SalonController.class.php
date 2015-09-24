@@ -3,17 +3,26 @@ namespace Admin\Controller;
 use Think\Controller;
 class SalonController extends CommonController {
     public function index(){
-    	$data = M("Salon")->where('approval=1')->select();
-    	$this->assign('list',$data);
+      $data = M("Salon")->where('approval=1')->select();
+      $this->assign('list',$data);
       $data_no = M("Salon")->where('approval=0')->select();
       $this->assign('list_no',$data_no);
-    	$this->display();
+      $this->display();
+    }
+
+    public function upToken(){
+      if(IS_GET){
+        $Service = D('Salon','Service');
+        $token['uptoken'] = $Service->get_accessToken();
+        $this->ajaxReturn($token);
+      }
     }
 
     public function upload(){
       $Service = D('Salon','Service');
       if (IS_POST) {
         $data = I('post.');
+        // var_dump($data);die();
         $data = $Service->add_files($data);
         if ($data != 0) {
           $this->success('添加成功');

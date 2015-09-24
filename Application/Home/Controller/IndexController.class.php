@@ -21,37 +21,24 @@ class IndexController extends CommonController {
     }
 
     public function upload(){
-        if(IS_POST){
-            $name = I('post.name');
-            $author = I('post.author');
-            $instruction = I('post.instruction');
-            $filename = explode('.', I('post.filename'));
-            $upload = new \Think\Upload();// 实例化上传类
-            $upload->maxSize = 0;// 设置附件上传大小
-            $upload->exts = array('rar', 'zip');// 设置附件上传类型
-            $upload->saveName = $filename[0];
-            $upload->savePath = '/File/'; // 设置附件上传目录
-            $info = $upload->upload();    // 上传文件
-            if(!$info) {// 上传错误提示错误信息
-                var_dump($upload->getError());
-            }
-            else{// 上传成功
-                $file = $info['fileToUpload'];
-                $data['filename'] = $name;
-                $data['savename'] = $file['savename'];
-                $data['size'] = $file['size'];
-                $data['path'] = './Uploads'.$file['savepath'].$file['savename'];
-                $data['time'] = date('Y-m-d H:i:s');
-                $data['author'] = $author;
-                $data['instruction'] = $instruction;
-                $flag = M('File')->add($data);
-                if($flag!=0){
-                    $this->success('添加成功');
-                } else if($flag==0){
-                    $this->error('添加失败');
-                }
-            }
+      $Service = D('Admin/File','Service');
+      if (IS_POST) {
+        $data = I('post.');
+        $data = $Service->add_file($data);
+        $this->ajaxReturn($data);
+      }
+    }
+    public function add(){
+      $Service = D('Admin/File','Service');
+      if (IS_POST) {
+        $data = I('post.');
+        $flag = $Service->add($data);
+        if($flag!=0){
+          $this->success('添加成功');
+        }else if($flag==0){
+          $this->error('添加失败');
         }
+      }
     }
 
     public function newshow(){
@@ -73,8 +60,9 @@ class IndexController extends CommonController {
         if (IS_POST) {
             $data = I('post.');
             $data = $Service->add_files($data);
+            // var_dump($data);
             if ($data != 0) {
-            $this->success('添加成功');
+            $this->success('添加成功,等待审批');
             }else{
             $this->error('添加失败');
             }

@@ -46,13 +46,13 @@
                         </notempty>
                         <div class="timeline-footer row">
                             <div class="col-sm-4 col-xs-4">
-                                <?php if(!empty($file["filename"])): ?><a href="/ydlm/index.php/Index/downloadsl?file=<?php echo ($file["filename"]); ?>" class="nav-link btn btn-info" style="width:100%;text-align:center">下载文档</a><?php endif; ?>
+                                <?php if(!empty($file["filename"])): ?><a href="<?php echo ($file["file"]); ?>" class="nav-link btn btn-info" style="width:100%;text-align:center">下载文档</a><?php endif; ?>
                             </div>
                             <div class="col-sm-4 col-xs-4">
-                                <?php if(!empty($file["mainfilename"])): ?><a href="/ydlm/index.php/Index/downloadsl?file=<?php echo ($file["mainfilename"]); ?>" class="nav-link btn btn-info" style="width:100%;text-align:center">下载源代码</a><?php endif; ?>
+                                <?php if(!empty($file["mainfilename"])): ?><a href="<?php echo ($file["mainfile"]); ?>" class="nav-link btn btn-info" style="width:100%;text-align:center">下载源代码</a><?php endif; ?>
                             </div>
                             <div class="col-sm-4 col-xs-4">
-                                <?php if(!empty($file["pptfilename"])): ?><a href="/ydlm/index.php/Index/downloadsl?file=<?php echo ($file["pptfilename"]); ?>" class="nav-link btn btn-info" style="width:100%;text-align:center">下载ppt</a><?php endif; ?>
+                                <?php if(!empty($file["pptfilename"])): ?><a href="<?php echo ($file["pptfile"]); ?>" class="nav-link btn btn-info" style="width:100%;text-align:center">下载ppt</a><?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">申请沙龙项目</h4>
                 </div>
-                <form form action="/ydlm/index.php/Index/uploadSalon" enctype="multipart/form-data" method="post" class="form-horizontal">
+                <form action="/ydlm/index.php/Index/uploadSalon" enctype="multipart/form-data" method="post" class="form-horizontal">
                     <div class="modal-body">
                         <div class="list-group">
                             <div class="row">
@@ -109,6 +109,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
+                        请耐心等待完成提示！
                         <button type="submit" class="btn btn-info">提交</button>
                         <button type="button" data-dismiss="modal" class="btn btn-info">取消</button>
                     </div>
@@ -138,10 +139,10 @@
             </nav>
         </div>
         <button class="menu-toggle"><span>Open Menu</span></button>
-    
-
     <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+
     <script src="/ydlm/Public/home/js/motionblur.js"></script>
     <script src="/ydlm/Public/home/js/menu.js"></script>
 </body>

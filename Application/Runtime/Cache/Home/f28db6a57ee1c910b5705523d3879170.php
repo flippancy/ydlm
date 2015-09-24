@@ -35,15 +35,11 @@
                     <div class="timeline-time">
                         <span class="date"><?php echo ($news["date"]); ?></span>
                     </div>
-                    <!-- <div class="timeline-icon"><a href="#add" data-toggle="modal"><i class="fa fa-plus"></i></a></div> -->
                     <div class="timeline-body" onclick="location='/ydlm/index.php/Index/newshow?id=<?php echo ($news["id"]); ?>'">
                         <h2><?php echo ($news["title"]); ?></h2>
                         <div class="timeline-content">
                             <?php if(!empty($news["img"])): ?><img class="timeline-img pull-left" src="<?php echo ($news["img"]); ?>" alt=""><?php endif; ?>
                         </div>
-<!--                         <div class="timeline-footer">
-                            <a class="nav-link" href="/ydlm/index.php/Index/newshow?id=<?php echo ($news["id"]); ?>">更多<i class="m-icon-swapright m-icon-white"></i></a>
-                        </div> -->
                     </div>
                 </li><?php endforeach; endif; else: echo "" ;endif; ?>
         </ul>
@@ -51,7 +47,7 @@
     <div class="col-sm-4">
         <div class="time-right">
             <div class="col-sm-6">
-                <a class="btn btn-info" style="width:100%" href="#">提交</a>
+                <!-- <a class="btn btn-info" style="width:100%" href="#">提交</a> -->
             </div>
             <div class="col-sm-6">
                 <a class="btn btn-info" style="width:100%" href="#">评论</a>
@@ -80,10 +76,10 @@
             </nav>
         </div>
         <button class="menu-toggle"><span>Open Menu</span></button>
-    
-
     <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+
     <script src="/ydlm/Public/home/js/motionblur.js"></script>
     <script src="/ydlm/Public/home/js/menu.js"></script>
 </body>

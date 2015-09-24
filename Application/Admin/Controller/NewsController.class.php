@@ -24,21 +24,27 @@ class NewsController extends CommonController {
             else{
                 $this->error("新闻生成失败！");
             }
+        }else{
+            $this->display();
         }
     }
 
     public function update(){
-        if (IS_GET) {
-            $News = M('News');
+        $id = I('get.id');
+        $News = M('news');
+        $map['id'] = $id;
+        if (IS_POST) {
             $news = I('post.');
-            $id = I('get.id');
-            $map['id'] = $id;
-            $reslut = $News->where($map)->save($news);
-            if($reslut == true){
+            $info = $News->where($map)->save($news);
+            if($info == true){
                 $this->success("修改成功");
             }else{
                 $this->error("修改失败");
             }
+        }else{
+            $info = $News->where($map)->find();
+            $this->assign('vo',$info);
+            $this->display();
         }
     }
 

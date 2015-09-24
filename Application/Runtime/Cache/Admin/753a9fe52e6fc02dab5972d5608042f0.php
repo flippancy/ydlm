@@ -51,6 +51,7 @@
                         <li><a href="<?php echo U('Person/index');?>">账户管理</a></li>
                     </ul>
                 </li>
+                <li><a href="/ydlm/index.php"><i class="fa fa-backward"></i>返回前台</a></li>
                 <li><a href="javascript:;" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-sign-out"></i>退出</a></li>
             </ul>
         </div>
@@ -161,13 +162,13 @@
                                     <td class="name"><?php echo ($vo["name"]); ?></td>
                                     <td class="instruction"><?php echo ($vo["instruction"]); ?></td>
                                     <td class="file"><?php echo ($vo["filename"]); ?>
-                                        <a href="<?php echo ($vo["file"]); ?>" data-toggle="modal" style="font-size:20px;color:#5BC0DE;margin:0;float:right;"><i class="fa fa-download"></i></a>
+                                        <a href="<?php echo ($vo["file"]); ?>" style="font-size:20px;color:#5BC0DE;margin:0;float:right;"><i class="fa fa-download"></i></a>
                                     </td>
                                     <td class="mainfile"><?php echo ($vo["mainfilename"]); ?>
-                                        <a href="<?php echo ($vo["mainfile"]); ?>" data-toggle="modal" style="font-size:20px;color:#5BC0DE;margin:0;float:right;"><i class="fa fa-download"></i></a>
+                                        <a href="<?php echo ($vo["mainfile"]); ?>" style="font-size:20px;color:#5BC0DE;margin:0;float:right;"><i class="fa fa-download"></i></a>
                                     </td>
                                     <td class="pptfile"><?php echo ($vo["pptfilename"]); ?>
-                                        <a href="<?php echo ($vo["pptfile"]); ?>" data-toggle="modal" style="font-size:20px;color:#5BC0DE;margin:0;float:right;"><i class="fa fa-download"></i></a>
+                                        <a href="<?php echo ($vo["pptfile"]); ?>" style="font-size:20px;color:#5BC0DE;margin:0;float:right;"><i class="fa fa-download"></i></a>
                                     </td>
                                     <td class="author"><?php echo ($vo["author"]); ?></td>
                                     <td class="date"><?php echo ($vo["date"]); ?></td>
@@ -178,7 +179,7 @@
                                         <p href="#update<?php echo ($vo["id"]); ?>" data-toggle="modal" style="font-size:20px;color:#5BC0DE;margin:0;"><i class=" fa fa-edit"></i></p>
                                     </td>
                                     <td>
-                                        <p onclick="location.href='/ydlm/admin.php/Salon/change?id=<?php echo ($vo["id"]); ?>'" style="font-size:20px;color:#5BC0DE;margin:0;"><i class="fa fa-check-circle-o"></i></p>
+                                        <p onclick="location.href='/ydlm/admin.php/Salon/change?id=<?php echo ($vo["id"]); ?>'" style="font-size:20px;color:#5BC0DE;margin:0;"><i class="fa fa-circle-o"></i></p>
                                     </td>
                                 </tr>
                             </tbody>
@@ -219,7 +220,7 @@
                     <?php echo ($Page_no); ?>
                 </div>
                 <div class="tab-pane fade" id="new">
-                    <form form action="/ydlm/admin.php/Salon/upload" enctype="multipart/form-data" method="post" class="form-horizontal">
+                    <form action="/ydlm/admin.php/Salon/upload" enctype="multipart/form-data" method="post" class="form-horizontal">
                         <div class="list-group">
                             <div class="row">
                                 <div class="control-group col-sm-4">
@@ -247,8 +248,8 @@
                                 <label class="control-label">说明:</label>
                                 <textarea class="form-control" name="instruction"></textarea>
                             </div>
-                            <div class="control-group">
-                                <button style="submit" class="btn btn-info pull-right">新建</button>
+                            <div class="control-group col-sm-offset-8 col-sm-4">
+                                <button class="btn btn-info pull-right" style="width:100%">新建</button>
                             </div>
                         </div>
                     </form>

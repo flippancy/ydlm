@@ -2,7 +2,7 @@
 return array(
 	//'配置项'=>'配置值'
     'UPLOAD_SITEIMG_QINIU' => array ( 
-                    'maxSize' => 5 * 1024 * 1024,//文件大小
+                    'maxSize' => 50 * 1024 * 1024,//文件大小
                     'rootPath' => './',
                     'saveName' => array ('uniqid', ''),
                     'driver' => 'Qiniu',
@@ -16,7 +16,7 @@ return array(
 
     'DB_TYPE' => 'mysql',
     'DB_HOST' => '127.0.0.1',
-    'DB_NAME' => 'app_ydlm2',
+    'DB_NAME' => 'app_ydlm',
     'DB_USER' => 'root',
     'DB_PWD' => '',
     'DB_PORT' => '3306',

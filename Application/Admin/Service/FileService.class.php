@@ -25,43 +25,38 @@ class FileService extends CommonService {
         return $info;
 	}
 
-    // // 添加文件
-    // public function add_file($data){
-    //     $setting=C('UPLOAD_SITEIMG_QINIU');
-    //     $qiniu = new \Think\Upload\Driver\Qiniu\QiniuStorage($setting['driverConfig']);
-    //     $Upload = new \Think\Upload($setting);
+    // 添加文件
+    public function add_file($data){
+        $setting=C('UPLOAD_SITEIMG_QINIU');
+        $qiniu = new \Think\Upload\Driver\Qiniu\QiniuStorage($setting['driverConfig']);
+        $Upload = new \Think\Upload($setting);
 
-    //     $info = $Upload->upload($_FILES);
-    //     // fileToUpload
-    //     if($info!=null){        
-    //         $time = date('Y-m-d');
-    //         $data['time'] = $time;
-    //         $data['savename'] = $info['fileToUpload']['savename'];
-    //         $data['path'] = $info['fileToUpload']['url'];
-    //         $data['size'] = $info['fileToUpload']['size'];
+        $info = $Upload->upload($_FILES);
+        return $info;
+    }
+    public function add($data){
+        if($data!=null){
+            $time = date('Y-m-d H:i:s');
+            $data['time'] = $time;
 
-    //         $result = M('file')->data($data)->add();
-    //     }
-    //     return $result;
-    // }
+            $result = M('file')->data($data)->add();
+            return $result;
+        }
+    }
 
-    // // 删除文件
-    // public function delete($file){
-    //     $file = M('file')->where($file)->find();
-    //     $data = $file['time'].'_'.$file['savename'];
+    // 删除文件
+    public function delete($file){
+        $file = M('file')->where($file)->field('path')->find();
 
-    //     // var_dump($data);
-    //     // die();
-    //     $flag = M('file')->where($file)->delete();
-    //     if ($flag) {
-    //         $file = $data;
+        $flag = M('file')->where($file)->delete();
+        if ($flag) {
+            $file['path'] = str_replace("/", "_", $file['path']);
+            $setting=C('UPLOAD_SITEIMG_QINIU');
+            $qiniu = new \Think\Upload\Driver\Qiniu\QiniuStorage($setting['driverConfig']);
+            $info = $qiniu->del($file['path']);
 
-    //         $setting=C('UPLOAD_SITEIMG_QINIU');
-    //         $qiniu = new \Think\Upload\Driver\Qiniu\QiniuStorage($setting['driverConfig']);
-    //         $info = $qiniu->del($file);
-
-    //         $info = '文件删除成功！';
-    //     }
-    //     return $info;
-    // }
+            $info = '文件删除成功！';
+        }
+        return $info;
+    }
 }

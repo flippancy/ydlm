@@ -11,7 +11,6 @@
     <link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/ydlm/Public/admin/css/templatemo_main.css">
     
-    <link href="http://cdn.bootcss.com/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.min.css" rel="stylesheet">
 
 </head>
 
@@ -52,6 +51,7 @@
                         <li><a href="<?php echo U('Person/index');?>">账户管理</a></li>
                     </ul>
                 </li>
+                <li><a href="/ydlm/index.php"><i class="fa fa-backward"></i>返回前台</a></li>
                 <li><a href="javascript:;" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-sign-out"></i>退出</a></li>
             </ul>
         </div>
@@ -63,7 +63,7 @@
         <div class="col-md-12 col-sm-12">
             <ul class="nav nav-tabs" role="tablist" id="templatemo-tabs">
                 <li class="active"><a href="#list" role="tab" data-toggle="tab" style="color:#222">新闻列表</a></li>
-                <li><a href="#new" role="tab" data-toggle="tab" style="color:#222">新建新闻</a></li>
+                <li><a href="/ydlm/admin.php/News/add" style="color:#222">新建新闻</a></li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane fade in active" id="list">
@@ -84,75 +84,15 @@
                                     <td class="title"><?php echo ($vo["title"]); ?></td>
                                     <td class="view_count"><?php echo ($vo["view_count"]); ?></td>
                                     <td>
-                                        <p href="#update<?php echo ($vo["id"]); ?>" data-toggle="modal" style="font-size:20px;color:#5BC0DE;margin:0;"><i class="fa fa-edit"></i></p>
+                                        <p onclick="location='/ydlm/admin.php/News/update?id=<?php echo ($vo["id"]); ?>'" style="font-size:20px;color:#5BC0DE;margin:0;"><i class="fa fa-edit"></i></p>
                                     </td>
                                     <td>
                                         <p class="fa fa-trash" onclick="javascript:if(confirm('确定删除该新闻?'))location='/ydlm/admin.php/News/delete?id=<?php echo ($vo["id"]); ?>'" style="font-size:20px;color:#5BC0DE;margin:0;"></p>
                                     </td>
                                 </tr>
-                            </tbody>
-                            <!-- 修改模态框 -->
-                            <div id="update<?php echo ($vo["id"]); ?>" class="modal fade" tabindex="-1" data-backdrop="update">
-                                <div class="modal-dialog modal-lg" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title">修改新闻内容</h4>
-                                        </div>
-                                        <form name="save" action="/ydlm/admin.php/News/update?id=<?php echo ($vo["id"]); ?>" enctype="multipart/form-data" method="post" class="form-horizontal">
-                                            <div class="modal-body">
-                                                <div class="row-fluid">
-                                                    <div class="control-group">
-                                                        <label class="control-label">新闻标图:</label>
-                                                        <input type="text" class="form-control" name="img" value="<?php echo ($vo["img"]); ?>" />
-                                                    </div>
-                                                    <div class="control-group">
-                                                        <label class="control-label">新闻标题:</label>
-                                                        <input type="text" class="form-control" name="title" value="<?php echo ($vo["title"]); ?>" />
-                                                    </div>
-                                                    <div class="control-group">
-                                                        <label class="control-label">新闻日期:</label>
-                                                        <input type="text" class="form-control" name="date" id="datepicker2" value="<?php echo ($vo["date"]); ?>" />
-                                                    </div>
-                                                    <br>
-                                                    <script id="editor2" name="image-text" type="text/plain"><?php echo ($vo["image-text"]); ?></script>
-                                                    <br>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="submit" class="btn" name="save">保存修改</button>
-                                                <button type="button" data-dismiss="modal" class="btn">取消</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div><?php endforeach; endif; else: echo "" ;endif; ?>
+                            </tbody><?php endforeach; endif; else: echo "" ;endif; ?>
                     </table>
                     <?php echo ($page); ?>
-                </div>
-                <div class="tab-pane fade" id="new">
-                    <div class="list-group">
-                        <form name="new" action="/ydlm/admin.php/News/add" enctype="multipart/form-data" method="post" class="form-horizontal">
-                            <div class="control-group">
-                                <label class="control-label">新闻标图:</label>
-                                <input type="text" class="form-control" name="img" />
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label">新闻标题:</label>
-                                <input type="text" class="form-control" name="title" />
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label">新闻日期:</label>
-                                <input type="text" class="form-control" name="date" id="datepicker" />
-                            </div>
-                            <br>
-                            <script id="editor" name="image-text" type="text/plain">你需要说点什么···············</script>
-                            <br>
-                            <div class="control-group col-sm-offset-8 col-sm-4">
-                                <button name="new" class="btn btn-info pull-right" style="width:100%">新建</button>
-                            </div>
-                        </form>
-                    </div>
                 </div>
             </div>
         </div>
@@ -185,34 +125,6 @@
     <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="/ydlm/Public/admin/js/templatemo_script.js"></script>
     
-    <script src="http://cdn.bootcss.com/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-    <script src="http://cdn.bootcss.com/bootstrap-datepicker/1.4.1/locales/bootstrap-datepicker.zh-CN.min.js"></script>
-    <!-- 配置文件 -->
-    <script type="text/javascript" src="/ydlm/Public/ueditor/ueditor.config.js"></script>
-    <!-- 编辑器源码文件 -->
-    <script type="text/javascript" src="/ydlm/Public/ueditor/ueditor.all.js"></script>
-    <!-- 实例化编辑器 -->
-    <script type="text/javascript">
-    var editor = UE.getEditor('editor', {
-        initialFrameHeight: 450,
-    });
-    var editor = UE.getEditor('editor2', {
-        initialFrameHeight: 200,
-    });
-
-
-    $(document).ready(function() {
-        $('#datepicker').datepicker({
-            format: 'yyyy-mm-dd',
-            language: 'zh-CN'
-        });
-        $('#datepicker2').datepicker({
-            format: 'yyyy-mm-dd',
-            language: 'zh-CN'
-        });
-
-    });
-    </script>
 
 </body>
 
