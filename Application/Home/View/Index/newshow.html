@@ -7,15 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{$new['title']}</title>
     <meta name="keywords" content="fullscreen pageflip, booklet, layout, bookblock, jquery plugin, flipboard layout, sidebar menu" />
-    <link rel="stylesheet" type="text/css" href="__HCSS__/jquery.jscrollpane.custom.css" />
-    <link rel="stylesheet" type="text/css" href="__HCSS__/custom.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="__HCSS__/jquery.jscrollpane.custom.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="__HCSS__/custom.css" /> -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <script src="__HJS__/modernizr.custom.79639.js"></script>
+    <!-- // <script src="__HJS__/modernizr.custom.79639.js"></script> -->
 </head>
 
 <body>
-    <div id="container" class="container">
-        <div class="bb-custom-wrapper">
+    <div class="container">
+    	<div class="row">
+    		<div style="position: absolute; top: 20px; left: 20px;"><a href="{:U('Index/timeline')}" type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left"></span></a></div>
+    		<h1 style="text-align: center;">{$new['title']}</h1><hr>
+    		<center>
+	    		<p style="text-align: center;">{$new['image-text']}</p>
+    		</center>
+    	</div>
+<!--         <div class="bb-custom-wrapper">
             <div id="bb-bookblock" class="bb-bookblock">
                 <div class="bb-item" id="{$new['id']}">
                     <div class="content">
@@ -28,23 +35,21 @@
             </div>
             <nav>
                 <a href="{:U('Index/timeline')}"><span >&larr;</span><a/>
-                <!--<span id="bb-nav-prev">&larr;</span>
-                <span id="bb-nav-next">&rarr;</span> -->
-            </nav>
+            </nav> -->
             <!--<a href="{:U("Index/timeline")}"><span id="" class="menu-button" >Table of Contents</span><a/>-->
         </div>
     </div>
     <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="__HJS__/jquery.mousewheel.js"></script>
-    <script src="__HJS__/jquery.jscrollpane.min.js"></script>
-    <script src="__HJS__/jquerypp.custom.js"></script>
-    <script src="__HJS__/jquery.bookblock.js"></script>
-    <script src="__HJS__/page.js"></script>
+<!--     // <script src="__HJS__/jquery.mousewheel.js"></script>
+    // <script src="__HJS__/jquery.jscrollpane.min.js"></script>
+    // <script src="__HJS__/jquerypp.custom.js"></script>
+    // <script src="__HJS__/jquery.bookblock.js"></script>
+    // <script src="__HJS__/page.js"></script> -->
     <script>
-        $(function() {
-            Page.init();
-        });
+        // $(function() {
+        //     Page.init();
+        // });
     </script>
     </body>
 </html>

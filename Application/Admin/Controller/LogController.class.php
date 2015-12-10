@@ -1,11 +1,11 @@
 <?php
 namespace Admin\Controller;
 use Think\Controller;
-class NewsController extends CommonController {
+class LogController extends CommonController {
     public function index(){
-        $index = D('News','Service');
-        $Page = $index->get_page(M('news'));
-        $info = $index->get_news($info, $Page);
+        $index = D('Log','Service');
+        $Page = $index->get_page(M('Log'));
+        $info = $index->get_logs($info, $Page);
         $show = $Page->show();
 
         $this->assign('list',$info);
@@ -14,14 +14,15 @@ class NewsController extends CommonController {
     }
 
     public function add(){
-        $News = M('News');
+        $Log = M('log');
         if(IS_POST){
-            $news = I('post.');
-            if($News->data($news)->add()){
-                $this->success("新闻生成成功！");
+            $log = I('post.');
+            $log['time'] = date('Y-m-d H:i:s');
+            if($Log->data($log)->add()){
+                $this->success("日志生成成功！");
             }
             else{
-                $this->error("新闻生成失败！");
+                $this->error("日志生成失败！");
             }
         }else{
             $this->display();
@@ -30,18 +31,18 @@ class NewsController extends CommonController {
 
     public function update(){
         $id = I('get.id');
-        $News = M('news');
+        $Log = M('log');
         $map['id'] = $id;
         if (IS_POST) {
-            $news = I('post.');
-            $info = $News->where($map)->save($news);
+            $log = I('post.');
+            $info = $Log->where($map)->save($log);
             if($info == true){
                 $this->success("修改成功");
             }else{
                 $this->error("修改失败");
             }
         }else{
-            $info = $News->where($map)->find();
+            $info = $Log->where($map)->find();
             $this->assign('vo',$info);
             $this->display();
         }
@@ -49,11 +50,11 @@ class NewsController extends CommonController {
 
     public function delete(){
         if (IS_GET) {
-            $News = M('News');
+            $Log = M('log');
             $id = I('get.id');
-            $news = $News->where(array('id' => $id))->find();
-            if($news != null && $news != false){
-                $reslut = $News->delete($id);
+            $log = $Log->where(array('id' => $id))->find();
+            if($log != null && $log != false){
+                $reslut = $Log->delete($id);
                 if(false === $reslut){
                     $this->error("删除失败！");
                 }

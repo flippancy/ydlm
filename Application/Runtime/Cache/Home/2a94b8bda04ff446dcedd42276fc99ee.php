@@ -8,8 +8,8 @@
     <meta name="description" content="" />
     <link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="/ydlm/1/Public/home/css/default.css" rel="stylesheet" type="text/css" media="all" />
-    <link rel="stylesheet" type="text/css" href="/ydlm/1/Public/Home/ar/css/style.css" />
-    <script type="text/javascript" src="/ydlm/1/Public/Home/ar/js/modernizr.custom.26633.js"></script>
+    <link rel="stylesheet" type="text/css" href="/ydlm/1/Public/home/ar/css/style.css" />
+    <script type="text/javascript" src="/ydlm/1/Public/home/ar/js/modernizr.custom.26633.js"></script>
 </head>
 
 <body>
@@ -45,7 +45,7 @@
     <div id="wrapper3">
         <section class="main">
             <div id="ri-grid" class="ri-grid ri-grid-size-2">
-                <img class="ri-loading-image" src="/ydlm/1/Public/Home/ar/images/loading.gif" />
+                <img class="ri-loading-image" src="/ydlm/1/Public/home/ar/images/loading.gif" />
                 <ul>
                     <?php if(is_array($photo)): $i = 0; $__LIST__ = $photo;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$photo): $mod = ($i % 2 );++$i;?><li>
                             <a href="<?php echo ($photo["url"]); ?>"><img src="<?php echo ($photo["url"]); ?>?imageView2/1/w/150/h/150" /></a>
@@ -86,7 +86,7 @@
     </div>
     <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/ydlm/1/Public/Home/ar/js/jquery.gridrotator.js"></script>
+    <script type="text/javascript" src="/ydlm/1/Public/home/ar/js/jquery.gridrotator.js"></script>
     <script type="text/javascript">
     $(function() {
         $('#ri-grid').gridrotator({

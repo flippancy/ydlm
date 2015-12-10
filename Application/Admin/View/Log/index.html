@@ -1,0 +1,48 @@
+<extend name="Public:admin" />
+<block name="css">
+</block>
+<block name="title">开发日志</block>
+<block name="content">
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <ul class="nav nav-tabs" role="tablist" id="templatemo-tabs">
+                <li class="active"><a href="#list" role="tab" data-toggle="tab" style="color:#222">日志列表</a></li>
+                <li><a href="__URL__/add" style="color:#222">新建日志</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="list">
+                    <table class="table-bordered table-striped table-condensed" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>日志id</th>
+                                <th>日志标题</th>
+                                <th>日志内容</th>
+                                <th>日志日期</th>
+                                <th colspan="2">操作</th>
+                            </tr>
+                        </thead>
+                        <volist name="list" id="vo">
+                            <tbody>
+                                <tr>
+                                    <td class="id">{$vo.id}</td>
+                                    <td class="title">{$vo.title}</td>
+                                    <td class="content">{$vo.content}</td>
+                                    <td class="time">{$vo.time}</td>
+                                    <td>
+                                        <p onclick="location='__URL__/update?id={$vo.id}'" style="font-size:20px;color:#5BC0DE;margin:0;"><i class="fa fa-edit"></i></p>
+                                    </td>
+                                    <td>
+                                        <p class="fa fa-trash" onclick="javascript:if(confirm('确定删除该日志?'))location='__URL__/delete?id={$vo.id}'" style="font-size:20px;color:#5BC0DE;margin:0;"></p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </volist>
+                    </table>
+                    {$page}
+                </div>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="js">
+</block>

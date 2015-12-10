@@ -9,10 +9,10 @@
     <meta name="viewport" content="width=device-width">
     <link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/ydlm/Public/admin/css/templatemo_main.css">
+    <link rel="stylesheet" href="/ydlm/1/Public/admin/css/templatemo_main.css">
     
-    <link href="/ydlm/Public/admin/css/dropzone.min.css" rel="stylesheet">
-    <link href="http://cdn.bootcss.com/lightbox2/2.8.1/css/lightbox.min.css" rel="stylesheet">
+    <link href="/ydlm/1/Public/admin/css/dropzone.min.css" rel="stylesheet">
+    <!-- <link href="http://cdn.bootcss.com/lightbox2/2.8.1/css/lightbox.min.css" rel="stylesheet"> -->
 
 </head>
 
@@ -41,9 +41,10 @@
                 </li>
                 <li><a href="<?php echo U('Admin/index');?>"><i class="fa fa-home"></i>主页</a></li>
                 <li><a href="<?php echo U('File/index');?>"><i class="fa fa-cubes"></i><span class="badge pull-right"></span>开源软件管理</a></li>
-                <li><a href="<?php echo U('News/index');?>"><i class="fa fa-newspaper-o"></i><span class="badge pull-right"></span>新闻管理</a></li>
-                <li><a href="<?php echo U('Photo/index');?>"><i class="fa fa-photo"></i><span class="badge pull-right"></span>照片管理</a></li>
                 <li><a href="<?php echo U('Salon/index');?>"><i class="fa fa-file-code-o"></i>沙龙管理</a></li>
+                <li><a href="<?php echo U('News/index');?>"><i class="fa fa-newspaper-o"></i><span class="badge pull-right"></span>新闻管理</a></li>
+                <li><a href="<?php echo U('Log/index');?>"><i class="fa fa-pencil"></i><span class="badge pull-right"></span>开发日志</a></li>
+                <li><a href="<?php echo U('Photo/index');?>"><i class="fa fa-photo"></i><span class="badge pull-right"></span>照片管理</a></li>
                 <li class="sub">
                     <a href="javascript:;">
                         <i class="fa fa-cog"></i> 系统管理
@@ -53,7 +54,7 @@
                         <li><a href="<?php echo U('Person/index');?>">账户管理</a></li>
                     </ul>
                 </li>
-                <li><a href="/ydlm/index.php"><i class="fa fa-backward"></i>返回前台</a></li>
+                <li><a href="/ydlm/1/index.php"><i class="fa fa-backward"></i>返回前台</a></li>
                 <li><a href="javascript:;" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-sign-out"></i>退出</a></li>
             </ul>
         </div>
@@ -93,11 +94,8 @@
                         <hr style="margin-bottom:0">
                         <div class="col-sm-12">创建时间：<?php echo ($info["created_at"]); ?></div>
                     </div>
-                    <!--                     <div class="col-sm-1 col-xs-6">
-                        <a href="#" class="btn btn-info" style="width:100%;" data-dismiss="alert"><span class="fa fa-eye"></span></a>
-                    </div> -->
                     <div class="col-sm-1 col-xs-6">
-                        <a href="/ydlm/admin.php/Photo/delete?name=<?php echo ($info["name"]); ?>" class="btn btn-info" style="width:100%;"><span class="fa fa-trash"></span></a>
+                        <a href="/ydlm/1/admin.php/Photo/delete?name=<?php echo ($info["name"]); ?>" class="btn btn-info" style="width:100%;"><span class="fa fa-trash"></span></a>
                     </div>
                 </div>
             </div><?php endforeach; endif; else: echo "" ;endif; ?>
@@ -129,10 +127,10 @@
     </div>
     <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="/ydlm/Public/admin/js/templatemo_script.js"></script>
+    <script src="/ydlm/1/Public/admin/js/templatemo_script.js"></script>
     
-    <script type="text/javascript" src="/ydlm/Public/admin/js/dropzone.min.js"></script>
-    <script src="http://cdn.bootcss.com/lightbox2/2.8.1/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="/ydlm/1/Public/admin/js/dropzone.min.js"></script>
+    <!-- // <script src="http://cdn.bootcss.com/lightbox2/2.8.1/js/lightbox.min.js"></script> -->
     <script type="text/javascript">
     $(".dropzone").dropzone({
         paramName: "file",
@@ -146,9 +144,9 @@
                     '<div class="alert alert-success">' +
                     '<div class="row">' +
                     '    <div class="col-sm-1">' +
-                    '       <center>' + 
+                    '       <center>' +
                     '        <a href="' + info.url + '" data-lightbox="image-1" data-title="' + info.remark + '"><img src="' + info.url + '?imageView2/1/w/150/h/150" style="width:100%;max-width:150px;"/></a>' +
-                    '       </center>' + 
+                    '       </center>' +
                     '    </div>' +
                     '<div class="col-sm-10">' +
                     '    <form action="<?php echo U('Photo/update');?>" class="form-horizontal" method="post">' +
@@ -167,7 +165,7 @@
                     '    <div class="col-sm-12">创建时间：' + info.created_at + '</div>' +
                     '</div>' +
                     '    <div class="col-sm-1 col-xs-6">' +
-                    '        <a href="/ydlm/admin.php/Photo/delete?name=' + info.name + '" class="btn btn-info" style="width:100%;"><span class="fa fa-file-image-o"></span></a>' +
+                    '        <a href="/ydlm/1/admin.php/Photo/delete?name=' + info.name + '" class="btn btn-info" style="width:100%;"><span class="fa fa-file-image-o"></span></a>' +
                     '    </div>' +
                     // '    <div class="col-sm-1 col-xs-6">' +
                     // '        <a href="#" class="btn btn-info" data-dismiss="alert" style="width:100%;"><span class="fa fa-file-image-o"></span></a>' +

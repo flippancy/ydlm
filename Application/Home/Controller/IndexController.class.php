@@ -3,20 +3,35 @@ namespace Home\Controller;
 use Think\Controller;
 class IndexController extends CommonController {
     public function index() {
-        $photo = M('photo')->select();
+        $photo = M('photo')->order('created_at desc')->limit(40)->select();
         $this->assign('photo' ,$photo);
         $this->display();
     }
 
     public function timeline(){
-        $news = M('news')->order('date desc')->select();
-        $this->assign('news' ,$news);
+        $log = M('log')->order('time desc')->limit(8)->select();
+        $index = D('Admin/News','Service');
+        $Page = $index->get_page(M('news'));
+        $info = $index->get_news($info, $Page);
+        $show = $Page->show();
+
+        $this->assign('news',$info);
+        $this->assign('page',$show);
+        $this->assign('log' ,$log);
         $this->display();
     }
     
     public function kyline(){
-        $file = M("file")->where('approval=1')->order('time desc')->select();
-        $this->assign('file' ,$file);
+        $index = D('Admin/File','Service');
+        $Page = $index->get_page(M('file'));
+        $info = $index->get_file($info, $Page);
+        $show = $Page->show();
+
+        $log = M('log')->order('time desc')->limit(8)->select();
+        // $file = M("file")->where('approval=1')->order('time desc')->select();
+        $this->assign('file' ,$info);
+        $this->assign('page',$show);
+        $this->assign('log' ,$log);
         $this->display();
     }
 
@@ -50,6 +65,7 @@ class IndexController extends CommonController {
     }
 
     public function salon(){
+        $log = M('log')->order('time desc')->limit(8)->select();
         $file = M("salon")->where('approval=1')->order('date desc')->select();
         $this->assign('file' ,$file);
         $this->display();

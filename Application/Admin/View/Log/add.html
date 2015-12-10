@@ -1,0 +1,44 @@
+<extend name="Public:admin" />
+<block name="css">
+</block>
+<block name="title">开发日志</block>
+<block name="content">
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <ul class="nav nav-tabs" role="tablist" id="templatemo-tabs">
+                <li><a href="__URL__/index" style="color:#222">日志列表</a></li>
+                <li class="active"><a href="#new" style="color:#222">新建日志</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="new">
+                    <div class="list-group">
+                        <form action="__URL__/add" enctype="multipart/form-data" method="post" class="form-horizontal">
+                            <div class="control-group">
+                                <label class="control-label">日志标题:</label>
+                                <input type="text" class="form-control" name="title" />
+                            </div>
+                            <label class="control-label">日志内容:</label>
+                            <script id="editor" name="content" type="text/plain">你需要说点什么···············</script>
+                            <br>
+                            <div class="control-group col-sm-offset-8 col-sm-4">
+                                <button class="btn btn-info pull-right" style="width:100%">新建</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="js">
+    <!-- 配置文件 -->
+    <script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.all.js"></script>
+    <!-- 实例化编辑器 -->
+    <script type="text/javascript">
+    var editor = UE.getEditor('editor', {
+        initialFrameHeight: 450,
+    });
+    </script>
+</block>

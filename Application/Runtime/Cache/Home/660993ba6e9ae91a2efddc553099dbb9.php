@@ -8,17 +8,17 @@
     <!-- <link rel="shortcut icon" href="../favicon.ico"> -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/ydlm/Public/home/css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="/ydlm/Public/home/css/demo.css" />
-    <link rel="stylesheet" type="text/css" href="/ydlm/Public/home/css/menu.css" />
+    <link rel="stylesheet" type="text/css" href="/ydlm/1/Public/home/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/ydlm/1/Public/home/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="/ydlm/1/Public/home/css/menu.css" />
     
     <title>移动联盟 | 沙龙展示</title>
-    <link href="/ydlm/Public/home/css/timeline.css" rel="stylesheet" type="text/css" />
+    <link href="/ydlm/1/Public/home/css/timeline.css" rel="stylesheet" type="text/css" />
 
     <!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-    <script src="/ydlm/Public/home/js/TweenMax.min.js"></script>
+    <script src="/ydlm/1/Public/home/js/TweenMax.min.js"></script>
     <style>
     a,
     a:hover {
@@ -46,13 +46,13 @@
                         </notempty>
                         <div class="timeline-footer row">
                             <div class="col-sm-4 col-xs-4">
-                                <?php if(!empty($file["filename"])): ?><a href="<?php echo ($file["file"]); ?>" class="nav-link btn btn-info" style="width:100%;text-align:center">下载文档</a><?php endif; ?>
+                                <?php if(!empty($file["filename"])): ?><a href="<?php echo ($file["file"]); ?>" class="nav-link btn btn-default" style="width:100%;text-align:center">下载文档</a><?php endif; ?>
                             </div>
                             <div class="col-sm-4 col-xs-4">
-                                <?php if(!empty($file["mainfilename"])): ?><a href="<?php echo ($file["mainfile"]); ?>" class="nav-link btn btn-info" style="width:100%;text-align:center">下载源代码</a><?php endif; ?>
+                                <?php if(!empty($file["mainfilename"])): ?><a href="<?php echo ($file["mainfile"]); ?>" class="nav-link btn btn-default" style="width:100%;text-align:center">下载源代码</a><?php endif; ?>
                             </div>
                             <div class="col-sm-4 col-xs-4">
-                                <?php if(!empty($file["pptfilename"])): ?><a href="<?php echo ($file["pptfile"]); ?>" class="nav-link btn btn-info" style="width:100%;text-align:center">下载ppt</a><?php endif; ?>
+                                <?php if(!empty($file["pptfilename"])): ?><a href="<?php echo ($file["pptfile"]); ?>" class="nav-link btn btn-default" style="width:100%;text-align:center">下载ppt</a><?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -62,10 +62,18 @@
     <div class="col-sm-4">
         <div class="time-right">
             <div class="col-sm-6">
-                <a class="btn btn-info" style="width:100%" href="#add" data-toggle="modal">提交</a>
+                <a class="btn btn-default" style="width:100%" href="#add" data-toggle="modal">提交</a>
             </div>
             <div class="col-sm-6">
-                <a class="btn btn-info" style="width:100%" href="#">评论</a>
+                <a class="btn btn-default" style="width:100%" href="#">评论</a>
+            </div>
+            <div class="list-group col-sm-12" style="padding:15px">
+                <?php if(is_array($log)): $i = 0; $__LIST__ = $log;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$log): $mod = ($i % 2 );++$i;?><button class="list-group-item" style="font-size:20px;"><?php echo ($log["title"]); ?></button><?php endforeach; endif; else: echo "" ;endif; ?>
+            </div>
+            <div class="list-group col-sm-12" style="padding:15px">
+                <div style="background-color:#fff;border-radius:5px;">
+                <div class="ds-thread" data-thread-key="salon" data-title="salon" data-url="salon"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -77,7 +85,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">申请沙龙项目</h4>
                 </div>
-                <form action="/ydlm/index.php/Index/uploadSalon" enctype="multipart/form-data" method="post" class="form-horizontal">
+                <form action="/ydlm/1/index.php/Index/uploadSalon" enctype="multipart/form-data" method="post" class="form-horizontal">
                     <div class="modal-body">
                         <div class="list-group">
                             <div class="row">
@@ -133,7 +141,7 @@
                 <a href="<?php echo U('Index/salon');?>" class="menu-item">
                     <span class="js-blur">沙龙</span>
                 </a>
-                <a href="/ydlm/admin.php" class="menu-item">
+                <a href="/ydlm/1/admin.php" class="menu-item">
                     <span class="js-blur">登陆</span>
                 </a>
             </nav>
@@ -142,9 +150,22 @@
     <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"ydlm"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+<!-- 多说公共JS代码 end -->
 
-    <script src="/ydlm/Public/home/js/motionblur.js"></script>
-    <script src="/ydlm/Public/home/js/menu.js"></script>
+    <script src="/ydlm/1/Public/home/js/motionblur.js"></script>
+    <script src="/ydlm/1/Public/home/js/menu.js"></script>
 </body>
 
 </html>

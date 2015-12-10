@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width">
     <link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/ydlm/Public/admin/css/templatemo_main.css">
+    <link rel="stylesheet" href="/ydlm/1/Public/admin/css/templatemo_main.css">
 </head>
 
 <body>
@@ -47,7 +47,7 @@
                 <div class="form-group">
                     <div class="col-md-12">
                         <div class="col-sm-offset-2 col-sm-2">
-                            <a class="btn btn-info" style="width:100%" href="/ydlm/index.php">返回</a>
+                            <a class="btn btn-info" style="width:100%" href="/ydlm/1/index.php">返回</a>
                         </div>
                         <div class="col-sm-6">
     <!--                         <div class="checkbox">

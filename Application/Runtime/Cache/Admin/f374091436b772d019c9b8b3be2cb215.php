@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width">
     <link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/ydlm/Public/admin/css/templatemo_main.css">
+    <link rel="stylesheet" href="/ydlm/1/Public/admin/css/templatemo_main.css">
     
 
 </head>
@@ -39,9 +39,10 @@
                 </li>
                 <li><a href="<?php echo U('Admin/index');?>"><i class="fa fa-home"></i>主页</a></li>
                 <li><a href="<?php echo U('File/index');?>"><i class="fa fa-cubes"></i><span class="badge pull-right"></span>开源软件管理</a></li>
-                <li><a href="<?php echo U('News/index');?>"><i class="fa fa-newspaper-o"></i><span class="badge pull-right"></span>新闻管理</a></li>
-                <li><a href="<?php echo U('Photo/index');?>"><i class="fa fa-photo"></i><span class="badge pull-right"></span>照片管理</a></li>
                 <li><a href="<?php echo U('Salon/index');?>"><i class="fa fa-file-code-o"></i>沙龙管理</a></li>
+                <li><a href="<?php echo U('News/index');?>"><i class="fa fa-newspaper-o"></i><span class="badge pull-right"></span>新闻管理</a></li>
+                <li><a href="<?php echo U('Log/index');?>"><i class="fa fa-pencil"></i><span class="badge pull-right"></span>开发日志</a></li>
+                <li><a href="<?php echo U('Photo/index');?>"><i class="fa fa-photo"></i><span class="badge pull-right"></span>照片管理</a></li>
                 <li class="sub">
                     <a href="javascript:;">
                         <i class="fa fa-cog"></i> 系统管理
@@ -51,7 +52,7 @@
                         <li><a href="<?php echo U('Person/index');?>">账户管理</a></li>
                     </ul>
                 </li>
-                <li><a href="/ydlm/index.php"><i class="fa fa-backward"></i>返回前台</a></li>
+                <li><a href="/ydlm/1/index.php"><i class="fa fa-backward"></i>返回前台</a></li>
                 <li><a href="javascript:;" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-sign-out"></i>退出</a></li>
             </ul>
         </div>
@@ -92,13 +93,13 @@
                                         <p href="<?php echo ($vo["path"]); ?>" data-toggle="modal" style="font-size:20px;color:#5BC0DE;margin:0;"><i class="fa fa-download"></i></p>
                                     </td>
                                     <td>
-                                        <p class="fa fa-trash" onclick="javascript:if(confirm('确定删除该开源项目?'))location='/ydlm/admin.php/File/delete?id=<?php echo ($vo["id"]); ?>'" style="font-size:20px;color:#5BC0DE;margin:0;"></p>
+                                        <p class="fa fa-trash" onclick="javascript:if(confirm('确定删除该开源项目?'))location='/ydlm/1/admin.php/File/delete?id=<?php echo ($vo["id"]); ?>'" style="font-size:20px;color:#5BC0DE;margin:0;"></p>
                                     </td>
                                     <td>
                                         <p href="#update<?php echo ($vo["id"]); ?>" data-toggle="modal" style="font-size:20px;color:#5BC0DE;margin:0;"><i class=" fa fa-edit"></i></p>
                                     </td>
                                     <td>
-                                        <p onclick="location.href='/ydlm/admin.php/File/change?id=<?php echo ($vo["id"]); ?>'" style="font-size:20px;color:#5BC0DE;margin:0;"><i class="fa fa-check-circle-o"></i></p>
+                                        <p onclick="location.href='/ydlm/1/admin.php/File/change?id=<?php echo ($vo["id"]); ?>'" style="font-size:20px;color:#5BC0DE;margin:0;"><i class="fa fa-check-circle-o"></i></p>
                                     </td>
                                 </tr>
                             </tbody>
@@ -110,7 +111,7 @@
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                             <h4 class="modal-title">修改基本内容</h4>
                                         </div>
-                                        <form form action="/ydlm/admin.php/File/update?id=<?php echo ($vo["id"]); ?>" enctype="multipart/form-data" method="post" class="form-horizontal">
+                                        <form form action="/ydlm/1/admin.php/File/update?id=<?php echo ($vo["id"]); ?>" enctype="multipart/form-data" method="post" class="form-horizontal">
                                             <div class="modal-body">
                                                 <div class="row-fluid">
                                                     <div class="control-group">
@@ -163,13 +164,13 @@
                                         <p href="/<?php echo ($vo["path"]); ?>" data-toggle="modal" style="font-size:20px;color:#5BC0DE;margin:0;"><i class="fa fa-download"></i></p>
                                     </td>
                                     <td>
-                                        <p class="fa fa-trash" onclick="javascript:if(confirm('确定删除该开源项目?'))location='/ydlm/admin.php/File/delete?id=<?php echo ($vo["id"]); ?>'" style="font-size:20px;color:#5BC0DE;margin:0;"></p>
+                                        <p class="fa fa-trash" onclick="javascript:if(confirm('确定删除该开源项目?'))location='/ydlm/1/admin.php/File/delete?id=<?php echo ($vo["id"]); ?>'" style="font-size:20px;color:#5BC0DE;margin:0;"></p>
                                     </td>
                                     <td>
                                         <p href="#update<?php echo ($vo["id"]); ?>" data-toggle="modal" style="font-size:20px;color:#5BC0DE;margin:0;"><i class=" fa fa-edit"></i></p>
                                     </td>
                                     <td>
-                                        <p onclick="location.href='/ydlm/admin.php/File/change?id=<?php echo ($vo["id"]); ?>'" style="font-size:20px;color:#5BC0DE;margin:0;"><i class="fa fa-circle-o"></i></p>
+                                        <p onclick="location.href='/ydlm/1/admin.php/File/change?id=<?php echo ($vo["id"]); ?>'" style="font-size:20px;color:#5BC0DE;margin:0;"><i class="fa fa-circle-o"></i></p>
                                     </td>
                                 </tr>
                             </tbody>
@@ -181,7 +182,7 @@
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                             <h4 class="modal-title">修改基本内容</h4>
                                         </div>
-                                        <form form action="/ydlm/admin.php/File/update?id=<?php echo ($vo["id"]); ?>" enctype="multipart/form-data" method="post" class="form-horizontal">
+                                        <form form action="/ydlm/1/admin.php/File/update?id=<?php echo ($vo["id"]); ?>" enctype="multipart/form-data" method="post" class="form-horizontal">
                                             <div class="modal-body">
                                                 <div class="row-fluid">
                                                     <div class="control-group">
@@ -214,7 +215,7 @@
                         <div class="control-group">
                             <label class="control-label">文件上传</label>
                             <div class="row file">
-                                <input id="fileupload" type="file" name="files[]" data-url="/ydlm/admin.php/File/upload" onchange="fileSelected();" class="col-sm-3" multiple>
+                                <input id="fileupload" type="file" name="files[]" class="col-sm-3" multiple>
                                 <div id="fileName" class="col-sm-3"></div>
                                 <div id="fileSize" class="col-sm-3"></div>
                                 <div class="col-sm-3 upload-file">
@@ -226,7 +227,7 @@
                             <div class="bar progress-bar progress-bar-info" style="width: 0%;"></div>
                         </div>
                     </div>
-                    <form action="/ydlm/admin.php/File/add" enctype="multipart/form-data" method="post" class="form-horizontal">
+                    <form action="/ydlm/1/admin.php/File/add" enctype="multipart/form-data" method="post" class="form-horizontal">
                         <input type="hidden" class="form-control" id="savename" name="savename" />
                         <input type="hidden" class="form-control" id="size" name="size" />
                         <input type="hidden" class="form-control" id="path" name="path" />
@@ -244,7 +245,7 @@
                             <input type="text" class="form-control" id="instruction" name="instruction" />
                         </div>
                         <div class="control-group col-sm-offset-8 col-sm-4">
-                            <button class="btn btn-info pull-right" style="width:100%">新建</button>
+                            <button class="btn btn-info pull-right new" style="width:100%" disabled="disabled">新建</button>
                         </div>
                     </form>
                 </div>
@@ -278,11 +279,11 @@
     </div>
     <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="/ydlm/Public/admin/js/templatemo_script.js"></script>
+    <script src="/ydlm/1/Public/admin/js/templatemo_script.js"></script>
     
-    <script src="/ydlm/Public/admin/js/jquery.ui.widget.js"></script>
-    <script src="/ydlm/Public/admin/js/jquery.iframe-transport.js"></script>
-    <script src="/ydlm/Public/admin/js/jquery.fileupload.js"></script>
+    <script src="/ydlm/1/Public/admin/js/jquery.ui.widget.js"></script>
+    <script src="/ydlm/1/Public/admin/js/jquery.iframe-transport.js"></script>
+    <script src="/ydlm/1/Public/admin/js/jquery.fileupload.js"></script>
     <script>
     $(function() {
         $('#fileupload').fileupload({
@@ -290,9 +291,10 @@
             add: function(e, data) {
                 $('.upload-file-btn').text('上传');
                 $('.upload-file-btn').click(function() {
-                    $('.upload-file-btn').text('上传中...');
+                    $('.upload-file-btn').text('上传中，请耐心等待提示！');
                     data.submit();
                 });
+                console.log(data);
             },
             done: function(e, data) {
                 var info = data.jqXHR.responseJSON;
@@ -301,6 +303,7 @@
                 $('#path').val(info[0].name);
                 $('#url').val(info[0].url);
                 $('.upload-file-btn').text('上传完成');
+                $('.new').attr('disabled', false);
                 alert("上传完成");
             },
             progressall: function(e, data) {

@@ -8,17 +8,17 @@
     <!-- <link rel="shortcut icon" href="../favicon.ico"> -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/ydlm/Public/home/css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="/ydlm/Public/home/css/demo.css" />
-    <link rel="stylesheet" type="text/css" href="/ydlm/Public/home/css/menu.css" />
+    <link rel="stylesheet" type="text/css" href="/ydlm/1/Public/home/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/ydlm/1/Public/home/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="/ydlm/1/Public/home/css/menu.css" />
     
     <title>移动联盟 | 开源项目</title>
-    <link href="/ydlm/Public/home/css/timeline.css" rel="stylesheet" type="text/css" />
+    <link href="/ydlm/1/Public/home/css/timeline.css" rel="stylesheet" type="text/css" />
 
     <!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-    <script src="/ydlm/Public/home/js/TweenMax.min.js"></script>
+    <script src="/ydlm/1/Public/home/js/TweenMax.min.js"></script>
     <style>
     a,
     a:hover {
@@ -42,7 +42,7 @@
                         </div>
                         <div class="timeline-footer row">
                             <div class="col-sm-6 col-xs-6">
-                                <a href="<?php echo ($file["url"]); ?>" class="nav-link btn btn-info" style="width:100%;text-align:center">下载</a>
+                                <a href="<?php echo ($file["url"]); ?>" class="nav-link btn btn-default" style="width:100%;text-align:center">下载</a>
                             </div>
                             <div class="col-sm-6 col-xs-6">
                                 <?php if(!empty($file["yulan"])): ?><a href="<?php echo ($file["yulan"]); ?>" class="nav-link btn btn-info" style="width:100%;text-align:center">
@@ -52,14 +52,23 @@
                     </div>
                 </li><?php endforeach; endif; else: echo "" ;endif; ?>
         </ul>
+        <?php echo ($page); ?>
     </div>
     <div class="col-sm-4">
         <div class="time-right">
             <div class="col-sm-6">
-                <a class="btn btn-info" style="width:100%" href="#add" data-toggle="modal">提交</a>
+                <a class="btn btn-default" style="width:100%" href="#add" data-toggle="modal">提交</a>
             </div>
             <div class="col-sm-6">
-                <a class="btn btn-info" style="width:100%" href="#">评论</a>
+                <a class="btn btn-default" style="width:100%" href="#">评论</a>
+            </div>
+            <div class="list-group col-sm-12" style="padding:15px">
+                <?php if(is_array($log)): $i = 0; $__LIST__ = $log;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$log): $mod = ($i % 2 );++$i;?><button class="list-group-item" style="font-size:20px;"><?php echo ($log["title"]); ?></button><?php endforeach; endif; else: echo "" ;endif; ?>
+            </div>
+            <div class="list-group col-sm-12" style="padding:15px">
+                <div style="background-color:#fff;border-radius:5px;">
+                <div class="ds-thread" data-thread-key="kyline" data-title="kyline" data-url="kyline"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -84,7 +93,7 @@
                         <div class="progress" id="progress">
                             <div class="bar progress-bar progress-bar-info" style="width: 0%;"></div>
                         </div>
-                        <form action="/ydlm/index.php/Index/add" enctype="multipart/form-data" method="post" class="form-horizontal">
+                        <form action="/ydlm/1/index.php/Index/add" enctype="multipart/form-data" method="post" class="form-horizontal">
                             <input type="hidden" class="form-control" id="savename" name="savename" />
                             <input type="hidden" class="form-control" id="size" name="size" required/>
                             <input type="hidden" class="form-control" id="path" name="path" required/>
@@ -103,7 +112,7 @@
                             </div>
                             <br>
                             <div class="control-group col-sm-4">
-                                <button class="btn btn-info pull-right" style="width:100%">新建</button>
+                                <button class="btn btn-info pull-right new" style="width:100%" disabled="disabled">新建</button>
                             </div>
                         </form>
                         <div class="control-group col-sm-offset-4 col-sm-4 upload-file">
@@ -134,7 +143,7 @@
                 <a href="<?php echo U('Index/salon');?>" class="menu-item">
                     <span class="js-blur">沙龙</span>
                 </a>
-                <a href="/ydlm/admin.php" class="menu-item">
+                <a href="/ydlm/1/admin.php" class="menu-item">
                     <span class="js-blur">登陆</span>
                 </a>
             </nav>
@@ -143,9 +152,9 @@
     <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     
-    <script src="/ydlm/Public/admin/js/jquery.ui.widget.js"></script>
-    <script src="/ydlm/Public/admin/js/jquery.iframe-transport.js"></script>
-    <script src="/ydlm/Public/admin/js/jquery.fileupload.js"></script>
+    <script src="/ydlm/1/Public/admin/js/jquery.ui.widget.js"></script>
+    <script src="/ydlm/1/Public/admin/js/jquery.iframe-transport.js"></script>
+    <script src="/ydlm/1/Public/admin/js/jquery.fileupload.js"></script>
     <script>
     $(function() {
         $('#fileupload').fileupload({
@@ -153,7 +162,7 @@
             add: function(e, data) {
                 $('.upload-file-btn').text('上传');
                 $('.upload-file-btn').click(function() {
-                    $('.upload-file-btn').text('上传中...');
+                    $('.upload-file-btn').text('上传中，请耐心等待提示！');
                     data.submit();
                 });
             },
@@ -164,6 +173,7 @@
                 $('#path').val(info[0].name);
                 $('#url').val(info[0].url);
                 $('.upload-file-btn').text('上传完成');
+                $('.new').attr('disabled', false);
                 alert("上传完成");
             },
             progressall: function(e, data) {
@@ -190,8 +200,25 @@
     }
     </script>
 
-    <script src="/ydlm/Public/home/js/motionblur.js"></script>
-    <script src="/ydlm/Public/home/js/menu.js"></script>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"ydlm"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+<!-- 多说公共JS代码 end -->
+
+
+    <script src="/ydlm/1/Public/home/js/motionblur.js"></script>
+    <script src="/ydlm/1/Public/home/js/menu.js"></script>
 </body>
 
 </html>

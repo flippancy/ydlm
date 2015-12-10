@@ -52,7 +52,7 @@ class SalonService extends CommonService {
     public function get_accessToken(){
         $setting=C('UPLOAD_SITEIMG_QINIU');
         $qiniu = new \Think\Upload\Driver\Qiniu\QiniuStorage($setting['driverConfig']);
-        $accessToken = $qiniu->UploadToken();
+        $accessToken = $qiniu->UploadToken($setting['driverConfig']['secrectKey'], $setting['driverConfig']['accessKey'], $param);
         return $accessToken;
     }
 }

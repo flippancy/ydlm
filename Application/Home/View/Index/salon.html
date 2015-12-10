@@ -22,13 +22,13 @@
                         </notempty>
                         <div class="timeline-footer row">
                             <div class="col-sm-4 col-xs-4">
-                                <notempty name="file.filename"><a href="{$file.file}" class="nav-link btn btn-info" style="width:100%;text-align:center">下载文档</a></notempty>
+                                <notempty name="file.filename"><a href="{$file.file}" class="nav-link btn btn-default" style="width:100%;text-align:center">下载文档</a></notempty>
                             </div>
                             <div class="col-sm-4 col-xs-4">
-                                <notempty name="file.mainfilename"><a href="{$file.mainfile}" class="nav-link btn btn-info" style="width:100%;text-align:center">下载源代码</a></notempty>
+                                <notempty name="file.mainfilename"><a href="{$file.mainfile}" class="nav-link btn btn-default" style="width:100%;text-align:center">下载源代码</a></notempty>
                             </div>
                             <div class="col-sm-4 col-xs-4">
-                                <notempty name="file.pptfilename"><a href="{$file.pptfile}" class="nav-link btn btn-info" style="width:100%;text-align:center">下载ppt</a></notempty>
+                                <notempty name="file.pptfilename"><a href="{$file.pptfile}" class="nav-link btn btn-default" style="width:100%;text-align:center">下载ppt</a></notempty>
                             </div>
                         </div>
                     </div>
@@ -39,10 +39,20 @@
     <div class="col-sm-4">
         <div class="time-right">
             <div class="col-sm-6">
-                <a class="btn btn-info" style="width:100%" href="#add" data-toggle="modal">提交</a>
+                <a class="btn btn-default" style="width:100%" href="#add" data-toggle="modal">提交</a>
             </div>
             <div class="col-sm-6">
-                <a class="btn btn-info" style="width:100%" href="#">评论</a>
+                <a class="btn btn-default" style="width:100%" href="#">评论</a>
+            </div>
+            <div class="list-group col-sm-12" style="padding:15px">
+                <volist name="log" id="log">
+                    <button class="list-group-item" style="font-size:20px;">{$log.title}</button>
+                </volist>
+            </div>
+            <div class="list-group col-sm-12" style="padding:15px">
+                <div style="background-color:#fff;border-radius:5px;">
+                <div class="ds-thread" data-thread-key="salon" data-title="salon" data-url="salon"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -96,4 +106,17 @@
     </div>
 </block>
 <block name="js">
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"ydlm"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+<!-- 多说公共JS代码 end -->
 </block>
